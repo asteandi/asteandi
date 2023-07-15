@@ -43,6 +43,7 @@ body::-webkit-scrollbar {
     height: 100vh;
     position: absolute;
 }
+
 /*Intro Start*/
 .intro {
     position: fixed;
@@ -239,7 +240,6 @@ body::-webkit-scrollbar {
 }
 .location-cont .location input {
     position: absolute;
-    
 }
 .location-cont .running {
     font-size: 24px;
@@ -265,7 +265,7 @@ body::-webkit-scrollbar {
 .location > .logo-loc {
     animation: spin 5s infinite linear;
 }
-.nama-home .location:hover .logo-loc, body {
+.nama-home .location:hover .logo-loc {
     background-color: white;
     box-shadow: 0 0 10px #fff,
                  0 0 20px #fff,
@@ -305,7 +305,7 @@ body::-webkit-scrollbar {
 .sec {
     position: relative;
     padding: 30px;
-    background-color: white;
+    background-color: var(--primary-color);
     transition: ease-in-out .5s;
     height: 100vh;
     z-index: 98;
