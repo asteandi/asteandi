@@ -19,7 +19,10 @@ html {
     text-decoration: none;
     box-sizing: border-box;
     margin: 0;
-    /*transition: all .1s ease-in-out;*/
+    transition: background-color .7s ease-in-out;
+}
+body {
+    overflow-x: hidden;
 }
 body::-webkit-scrollbar {
     display: none;
@@ -43,6 +46,10 @@ body::-webkit-scrollbar {
     height: 100vh;
     position: absolute;
 }
+/* .backgroundd:hover #backhome {
+    opacity: 50%;
+    transition: .3s ease-in-out;
+} */
 
 /*Intro Start*/
 .intro {
@@ -195,7 +202,7 @@ body::-webkit-scrollbar {
     height: 100vh;
     align-items: center;
     padding: 30px 0 30px 0;
-    transition: all 1s ease-in-out;
+    /* transition: all 5s ease-in-out; */
 }
 .nama-home .space {
     height: 40%;
@@ -211,27 +218,29 @@ body::-webkit-scrollbar {
     text-align: right;
     font-size: 60px;
     font-weight: 700;
+    position: absolute;
 }
 .location-cont .running .text1 span {
-    transition: 0.5s;
+    transition: .5s;
 }
 .location-cont .running .text1:hover span:nth-child(1) {
     margin-right: 10px;
 }
 .location-cont .running .text1:hover span {
     color: #fff;
-    text-shadow: 0 0 10px #fff,
+    text-shadow: 0 0 10px #f3eec7,
                  0 0 20px #fff,
                  0 0 40px #fff,
                  0 0 80px #fff,
-                 0 0 120px #fff;   
+                 0 0 120px #fff,
+                 0 0 180px #fff;   
 }
 .location-cont .location {
     align-items: end;
     width: 18%;
     height: 85%;
     background-color: var(--primary-color);
-    border-radius: 0 100px 100px 0;
+    border-radius: 0 30px 30px 0;
     padding: 0 30px 0 30px;
     display: flex;
     align-items: center;
@@ -248,7 +257,7 @@ body::-webkit-scrollbar {
     align-items: center;
     display: flex;
     justify-content: end;
-    padding: 0 30px 0 30px;
+    padding: 0 30px 0 0;
 }
 .nama-home .location .lokasi {
     color: #fff;
@@ -256,19 +265,21 @@ body::-webkit-scrollbar {
     font-weight: 300;
     padding: 0 50px 0 0;
 }
-.nama-home .location .logo-loc {
+.nama-home .location .logoloc {
     color: #fff;
     width: 72px;
     cursor: pointer;
     border-radius: 50px;
 }
-.location > .logo-loc {
-    animation: spin 5s infinite linear;
+.circledeg { 
+    background-color: #a4b2b7; 
+} 
+.location > .logoloc {
+    animation: spin 8s infinite linear;
 }
-.nama-home .location:hover .logo-loc {
-    background-color: white;
-    box-shadow: 0 0 10px #fff,
-                 0 0 20px #fff,
+.nama-home .location:hover .logoloc {
+    box-shadow: 0 0 10px #f3eec7,
+                 0 0 20px #f3eec7,
                  0 0 40px #fff,
                  0 0 80px #fff,
                  0 0 120px #fff;   
@@ -299,23 +310,98 @@ body::-webkit-scrollbar {
     font-weight: 300;
     color: #fff;
 }
+/* label {
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+input {
+    position: absolute;
+    opacity: 0;
+}
+.sun {
+    position: absolute;
+    font-size: 0.5em;
+    color: var(--primary-color);
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
+    transform: scale(0);
+    transition: 1s ease;
+}
+input:checked~.sun {
+    transition-delay: .8s;
+    transform: scale(1) rotate(360deg);
+}
+.moon {
+    font-size: 0.5em;
+    columns: #666;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
+    transition: 1s ease;
+    transition-delay: .8s;
+}
+input:checked~.moon {
+    transition-delay: 0s;
+    transform: rotate(360deg) scale(0);
+}
+.toggle {
+    position: absolute;
+    display: block;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    box-shadow: 
+        inset 0 8px 60px rgba(0, 0, 0, .1),
+        inset 0 8px 8px rgba(0, 0, 0, .1),
+        inset 0 -4px 4px rgba(0, 0, 0, .1);
+    z-index: -1;
+}
+input:checked~.toggle {
+    background: #fff;
+}
+.animateBg {
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    background: #CC9933;
+    z-index: -2;
+    clip-path: circle(0.0% at 50% 50%);
+    transition: 1.5s ease-out;
+}
+input:checked~.animateBg {
+    clip-path: circle(70.7% at 50% 50%);
+} */
 /*Home End*/
 
+
+
+
+
 /*Content Start*/
-.sec {
+.sec1 {
+    position: relative;
+    padding: 30px;
+    background-color: #fff;
+    /* transition: 5s; */
+    height: 100vh;
+    z-index: 99;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.048)
+}
+.sec2 {
     position: relative;
     padding: 30px;
     background-color: var(--primary-color);
-    transition: ease-in-out .5s;
+    /* transition: 5s; */
     height: 100vh;
-    z-index: 98;
+    z-index: 99;
 }
+/*Content End*/
 
 
 
-
-
-/*Pointer Cursor Start*/
+/* Pointer Cursor Start*/
 @media (any-pointer: fine) {
     .cursor, .cursor2, .cursor3 {
         position: absolute;
@@ -323,11 +409,12 @@ body::-webkit-scrollbar {
         left: 0;
         display: block;
         pointer-events: none;
+        z-index: 1000;
     }
     .cursor-inner, .cursor-inner2, .cursor-inner3 {
-        fill: #0a4a544a;
+        fill: rgba(0, 0, 0, 0.165);
         /*stroke: white;
         stroke-width: 1px;*/
     }
 }
-/*Pointer Cursor End*/
+/*Pointer Cursor End */

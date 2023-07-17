@@ -21,11 +21,7 @@
     <title>Dani Komardani | Freelance Design and Developer</title>
 </head>
 
-<body class="parallax">
-    <section class="parallax backgroundd">
-        <img src="assets/img/background13.png" id="backhome">
-    </section>
-
+<body class="parallax" >
     <!--INTRO START-->
     <div class="intro">
         <h1 class="logo-header">
@@ -34,58 +30,70 @@
     </div>
     <!--INTRO END-->
 
-    <!--MAIN BODY START-->
-    <main>
-        <!--HEADER START-->
-        <header>
-            <div class="navbar">
-                <div class="container-header">
-                    <div class="logo-start">
-                        <span3>&copy;</span3>
-                        <div class="logo-hover">
-                            <a href="#" class="logo">
-                                <span>ASTEANDI</span>
-                                <span><span2>Dani Komardani</span2></span>
-                            </a>
-                        </div>
+    <!--HEADER START-->
+    <header>
+        <div class="navbar">
+            <div class="container-header">
+                <div class="logo-start">
+                    <span3>&copy;</span3>
+                    <div class="logo-hover">
+                        <a href="#" class="logo">
+                            <span>ASTEANDI</span>
+                            <span><span2>Dani Komardani</span2></span>
+                        </a>
                     </div>
-                    <div class="menu-header">
-                        <div class="button">
-                            <div class="button-deco">
-                                <a href="#" class="button-filter">Work</a>
-                            </div>
-                            <span class="button-text"></span>
+                </div>
+                <div class="menu-header">
+                    <div class="button">
+                        <div class="button-deco">
+                            <a href="#work" class="button-filter">Work</a>
                         </div>
-                        <div class="button2">
-                            <div class="button-deco2">
-                                <a href="#" class="button-filter2">About</a>
-                            </div>
-                            <span class="button-text2"></span>
+                        <span class="button-text"></span>
+                    </div>
+                    <div class="button2">
+                        <div class="button-deco2">
+                            <a href="#" class="button-filter2">About</a>
                         </div>
-                        <div class="button3">
-                            <div class="button-deco3">
-                                <a href="#" class="button-filter3">Contact</a>
-                            </div>
-                            <span class="button-text3"></span>
+                        <span class="button-text2"></span>
+                    </div>
+                    <div class="button3">
+                        <div class="button-deco3">
+                            <a href="#" class="button-filter3">Contact</a>
                         </div>
+                        <span class="button-text3"></span>
                     </div>
                 </div>
             </div>
-        </header>
-        <!--HEADER START-->
-        <!--HOME START-->
-        <section class="backanim">
-            
+        </div>
+    </header>
+    <!--HEADER START-->
+
+    <!--MAIN BODY START-->
+    <section id="butter">
+        <!--GAMBAR HOME START-->
+        <section class="parallax backgroundd">
+            <img src="assets/img/background13.png" id="backhome">
         </section>
+        <!--GAMBAR HOME END-->
+        
+        <!--HOME START-->
         <div class="nama-home">
             <div class="space"></div>
-            <div class="location-cont" id="loccount">
+            <div class="location-cont">
                 <div class="location" id="locc">
                     <div class="lokasi" id="locc">Located in Indonesian</div>
-                    <img src="assets/img/logo2.png" alt="" class="logo-loc" id="locc">
+                    <img src="assets/img/logo2.png" alt="" class="logoloc circledeg" id="locc">
                 </div>
-                <div class="running">
-                    <a href="#" class="text1" id="textdani"><span>DANI</span>KOMARDANI</a>             
+                <div class="running" id="loccount">
+                    <a href="#" class="text1" id="textdani">
+                        <span>DANI</span>KOMARDANI</a>
+                        <!-- <label class="labelcol">
+                            <input type="checkbox">
+                            <ion-icon name="sunny" class="sun"></ion-icon>
+                            <ion-icon name="moon" class="moon"></ion-icon>
+                            <span class="toggle"></span>
+                            <span class="animateBg"></span>
+                        </label> -->     
                 </div>
             </div>      
             <div class="text" id="kerjaan">
@@ -95,12 +103,18 @@
             </div>
         </div>
         <!--HOME END-->
+        
         <!--CONTENT START-->
-        <section class="sec">
+        <section class="sec1" id="work">
             <p>
             </p>
         </section>
-    </main>
+        <section class="sec2">
+            <p>
+            </p>
+        </section>
+        <!--CONTENT END-->
+    </section>
     <!--MAIN BODY END-->
 
     <!--CURSORS START-->
@@ -127,6 +141,10 @@
     <script src="assets/js/magnet.min2.js"></script>
     <script src="assets/js/magnet.min3.js"></script>
     <script src="assets/js/magnet.min4.js"></script>
+    <script src="assets/js/butter.js"></script>
+    <script>
+        butter.init({cancelOnTouch: true});
+    </script>
     <!--SCRIPT JS END-->
 </body>
 </html>
