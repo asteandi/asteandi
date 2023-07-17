@@ -12,6 +12,7 @@ let text = document.getElementById('textdani');
 let backgroundhome = document.getElementById('backhome');
 let lokasi = document.getElementById('locc');
 let kerja = document.getElementById('kerjaan');
+let buttonaboutt = document.getElementById('buttonabout');
 
 const circledegre = document.querySelectorAll(".logoloc");
 circledegre.forEach(logoloc => {
@@ -36,7 +37,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 setTimeout(() => {
                     span.classList.remove('active');
                     span.classList.add('fade');
-                }) (idx + 1) * 50
+                }, (idx + 1) * 50)
             })
         }, 2000);
 
@@ -48,12 +49,13 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
-    text.style.marginTop = value * 0.5 + 'px';
+    text.style.marginTop = value * 0.6 + 'px';
     // text.style.translate = value * -1.5 + 'px';
-    backgroundhome.style.marginTop = value * 0.15 + 'px';
-    lokasi.style.marginTop = value * 0.5 + 'px';
+    backgroundhome.style.marginTop = value * 0.2 + 'px';
+    lokasi.style.marginTop = value * 0.6 + 'px';
     // lokasi.style.translate = value * -0.3 + 'px';
     kerja.style.marginTop = value * 0.35 + 'px';
+    buttonaboutt.style.marginTop = value * -0.35 + 'px';
 })
 
 window.addEventListener("scroll", function(){
