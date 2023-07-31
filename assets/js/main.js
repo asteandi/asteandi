@@ -1,28 +1,23 @@
-// import Scrollbar from 'smooth-scrollbar';
-// var options = {
-//     'damping': 0.05
-// }
-// Scrollbar.init(document.querySelector('#my-scrollbar'), options);
-
 let intro = document.querySelector('.intro');
 let logo = document.querySelector('.logo-header');
 let logoSpan = document.querySelectorAll('.logo-in');
 
-let text = document.getElementById('textdani');
-let backgroundhome = document.getElementById('backhome');
-let lokasi = document.getElementById('locc');
-let kerja = document.getElementById('kerjaan');
-let buttonaboutt = document.getElementById('buttonabout');
+let backgroundasteandi = document.getElementById('backgroundasteandi');
+let locationasteandi = document.getElementById('locationasteandi');
+// let runningtext = document.getElementById('runningtext');
+let buttonabout = document.getElementById('buttonabout');
+let buttonwork = document.getElementById('buttonwork');
 
-const circledegre = document.querySelectorAll(".logoloc");
-circledegre.forEach(logoloc => {
-    logoloc.addEventListener("click", (style) => {
-        const computedStyle = window.getComputedStyle(style.target)
-        console.log(computedStyle.backgroundColor)
-        document.body.style.backgroundColor = computedStyle.backgroundColor
-    })
-})
 
+function changeImage(anything) {
+    document.getElementById('slider').src = anything;
+}
+function ToggleMenu(){
+    const menuToggle = document.querySelector('.menuToggle');
+    const navigation = document.querySelector('.navigation');
+    menuToggle.classList.toggle('active')
+    navigation.classList.toggle('active')
+}
 
 window.addEventListener('DOMContentLoaded', () => {
     setTimeout(() => {
@@ -49,16 +44,17 @@ window.addEventListener('DOMContentLoaded', () => {
 
 window.addEventListener('scroll', () => {
     let value = window.scrollY;
-    text.style.marginTop = value * 0.6 + 'px';
-    // text.style.translate = value * -1.5 + 'px';
-    backgroundhome.style.marginTop = value * 0.2 + 'px';
-    lokasi.style.marginTop = value * 0.6 + 'px';
-    // lokasi.style.translate = value * -0.3 + 'px';
-    kerja.style.marginTop = value * 0.35 + 'px';
-    buttonaboutt.style.marginTop = value * -0.35 + 'px';
+    backgroundasteandi.style.marginTop = value * 0.2 + 'px';
+    locationasteandi.style.marginTop = value * 0.15 + 'px';
+    // runningtext.style.marginTop = value * 0.5 + 'px';
+    buttonabout.style.marginTop = value * -0.1 + 'px';
+    buttonwork.style.marginTop = value * -0.1 + 'px';
 })
 
-window.addEventListener("scroll", function(){
-    var header = document.querySelector(".navbar");
-    header.classList.toggle("sticky", window.scrollY > 0);
-})
+//initialize Tilt Js
+VanillaTilt.init(
+    document.querySelectorAll(".js-tilt"), {
+        max: 35,
+        speed: 400,
+});
+

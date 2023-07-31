@@ -1,516 +1,1559 @@
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@400;500;600;700;800&family=Nunito:wght@400;600;700;800&display=swap');
-/*Variabel*/
-:root {
-    --primary-color : #0a4a54;
-    --secondary-color : #62b0bb;
+@import url('https://fonts.googleapis.com/css2?family=Exo:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Monoton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;800&display=swap');
 
-    --main-font : 'Nunito', sans-serif;
-    --heading-font : 'Kanit', sans-serif;
-}
+/*VARIABLE*/
+    :root {
+        --primary-color : #0a4a54;
+        --secondary-color : #62b0bb;
+        --third-color : #a4b2b7;
 
-/*Mengatur Setting Halaman HTML*/
-html {
-    scroll-behavior: smooth;
-}
-* {
-    font-family: var(--heading-font);
-    color: var(--primary-color);
-    list-style: none;
-    text-decoration: none;
-    box-sizing: border-box;
-    margin: 0;
-    transition: background-color .7s ease-in-out;
-}
-body {
-    overflow-x: hidden;
-}
-body::-webkit-scrollbar {
-    display: none;
-}
-.parallax {
-    background-color: #a4b2b7;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-}
-.backgroundd {
-    justify-content: center;
-    content: '';
-    width: 100vw;
-    position: absolute;
-    display: flex;
-    z-index: 97;
-}
-#backhome {
-    height: 100vh;
-    position: absolute;
-}
-/* .backgroundd:hover #backhome {
-    opacity: 50%;
-    transition: .3s ease-in-out;
-} */
+        --main-font : 'Exo', sans-serif;
+        --heading-font : 'Monoton', cursive;
+    }
 
-/*Intro Start*/
-.intro {
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--primary-color);
-    transition: 1s;
-}
-.logo-header {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-}
-.logo-in {
-    font-size: 24px;
-    position: relative; 
-    display: inline-block;
-    bottom: -20px;
-    opacity: 0;
-    color: var(--secondary-color);
-}
-.logo-ast {
-    color: #fff;
-}
-.logo-in.active {
-    bottom: 0;
-    opacity: 1;
-    transition: ease-in-out 1s;
-}
-.logo-in.fade {
-    bottom: 150px;
-    opacity: 0;
-    transition: ease-in-out 1s;
-}
-/*Intro End*/
+/*WEB SETTING*/
+    *, html, body {
+        font-family: var(--main-font);
+        color: var(--primary-color);
+        list-style: none;
+        text-decoration: none;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        transition: background-color .7s ease-in-out;
+    }
+    body {
+        background-color: var(--third-color);
+        overflow-x: hidden;
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    .parallax {
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
+    }
 
-/*Header Start*/
-.navbar {
-    padding: 30px;
-    position: fixed;
-    left: 0;
-    right: 0;
-    text-decoration: none;
-    list-style: none;
-    z-index: 100;
-    transition: ease-in-out .5s;
-}
-.navbar.sticky {
-    padding: 5px 30px;
-    width: 100vw;
-    position: fixed;
-    /* background-color: var(--primary-color); */
-    /* border-bottom: 1px solid rgba(119, 119, 119, 0.198); */
-    z-index: 99;
-}
-.navbar.sticky span,
-.navbar.sticky span2,
-.navbar.sticky span3,
-.navbar.sticky .button-filter,
-.navbar.sticky .button-filter2,
-.navbar.sticky .button-filter3 {
-    color: var(--primary-color);
-}
-.navbar .container-header {
-    display: flex;
-}
-.navbar .container-header .logo-start {
-    list-style: none;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-}
-.navbar .container-header .logo-start span3 {
-    font-size: 20px;
-    font-family: var(--main-font);
-    margin-right: 3px;
-    font-weight: 800;
-}
-.navbar .container-header .logo-start .logo {
-    position: relative;
-    height: 40px;
-    display: block;
-    text-decoration: none;
-    overflow: hidden;
-}
-.navbar .container-header .logo-start .logo::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #a4b2b7;
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease-in-out;
-    transition-delay: 0s;
-}
-.navbar .container-header .logo-start .logo:hover::before {
-    transform: scaleX(1);
-    transform-origin: right;
-    transition: transform 0.3s ease-in-out;
-    transition-delay: 0.3s;
-}
-.navbar .container-header .logo-start .logo span {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    transition: 0.5s;
-    font-size: 20px;
-    font-weight: 700;
-    transition-delay: 0.3s;
-}
-.navbar .container-header .logo-start .logo span2 {
-    font-family: var(--main-font);
-    font-weight: 600;
-    font-size: 18px;
-}
-.navbar .container-header .logo-start .logo:hover span:nth-child(1) {
-    transform: translateY(-100%);
-    transition-delay: 0s;
-}
-.navbar .container-header .logo-start .logo:hover span:nth-child(2) {
-    transform: translateY(-100%);
-    transition-delay: 0s;
-}
-.navbar .container-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.container-header .menu-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-}
-.container-header .menu-header a {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 600;
-    padding: 10px 0 10px 0;
-}
-/*Header End*/
-
-/*Home Start*/
-.nama-home {
-    height: 100vh;
-    align-items: center;
-    padding: 30px 0 30px 0;
-    /* transition: all 5s ease-in-out; */
-}
-.nama-home .space {
-    height: 40%;
-    align-items: end;
-    display: flex;
-    justify-content: end;
-    padding: 0 30px 0 0;
-}
-.nama-home .location-cont {
-    height: 20%;
-    align-items: center;
-    display: flex;
-}
-.location-cont .running .text1 {
-    align-items: center;
-    display: flex;
-    text-align: right;
-    font-size: 64px;
-    font-weight: 700;
-    position: absolute;
-}
-.location-cont .running .text1 span {
-    transition: .5s;
-}
-.location-cont .running .text1:hover span:nth-child(1) {
-    margin-right: 10px;
-}
-.location-cont .running .text1:hover span {
-    color: #fff;
-    text-shadow: 0 0 10px #f3eec7,
-                 0 0 20px #fff,
-                 0 0 40px #fff,
-                 0 0 80px #fff,
-                 0 0 120px #fff,
-                 0 0 180px #fff;   
-}
-.location-cont .location {
-    align-items: end;
-    width: 18%;
-    height: 85%;
-    background-color: var(--primary-color);
-    border-radius: 0 50px 50px 0;
-    padding: 0 30px 0 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 20;
-}
-.location-cont .location input {
-    position: absolute;
-}
-.location-cont .running {
-    font-size: 24px;
-    height: 100%;
-    width: 100%;
-    align-items: center;
-    display: flex;
-    justify-content: end;
-    padding: 0 30px 0 0;
-}
-.nama-home .location .lokasi {
-    color: #fff;
-    font-size: 16px;
-    font-weight: 300;
-    padding: 0 50px 0 0;
-}
-.nama-home .location .logoloc {
-    color: #fff;
-    width: 72px;
-    cursor: pointer;
-    border-radius: 50px;
-}
-.circledeg { 
-    background-color: var(--secondary-color); 
-} 
-.location > .logoloc {
-    animation: spin 10s infinite linear;
-}
-.nama-home .location:hover .logoloc {
-    box-shadow: 0 0 10px #f3eec7,
-                 0 0 20px #f3eec7,
-                 0 0 40px #fff,
-                 0 0 80px #fff,
-                 0 0 120px #fff;   
-}
-.nama-home .text {
-    font-style: var(--main-font);
-    height: 40%;
-    width: 100%;
-    display: flex;
-    align-items: end;
-    justify-content: end;
-    flex-direction: column;
-    padding: 30px 30px 0 0;
-    z-index: 30;
-}
-.nama-home .text i {
-    font-size: 36px;
-    margin-bottom: 10px;
-    color: #fff;
-}
-.nama-home .text .text0 {
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: #fff;
-}
-.nama-home .text .text2 {
-    font-size: 1.3rem;
-    font-weight: 300;
-    color: #fff;
-}
-/* label {
-    width: 50px;
-    height: 50px;
-    border-radius: 50px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-input {
-    position: absolute;
-    opacity: 0;
-}
-.sun {
-    position: absolute;
-    font-size: 0.5em;
-    color: var(--primary-color);
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
-    transform: scale(0);
-    transition: 1s ease;
-}
-input:checked~.sun {
-    transition-delay: .8s;
-    transform: scale(1) rotate(360deg);
-}
-.moon {
-    font-size: 0.5em;
-    columns: #666;
-    filter: drop-shadow(0 0 2px rgba(0, 0, 0, .5));
-    transition: 1s ease;
-    transition-delay: .8s;
-}
-input:checked~.moon {
-    transition-delay: 0s;
-    transform: rotate(360deg) scale(0);
-}
-.toggle {
-    position: absolute;
-    display: block;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    box-shadow: 
-        inset 0 8px 60px rgba(0, 0, 0, .1),
-        inset 0 8px 8px rgba(0, 0, 0, .1),
-        inset 0 -4px 4px rgba(0, 0, 0, .1);
-    z-index: -1;
-}
-input:checked~.toggle {
-    background: #fff;
-}
-.animateBg {
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background: #CC9933;
-    z-index: -2;
-    clip-path: circle(0.0% at 50% 50%);
-    transition: 1.5s ease-out;
-}
-input:checked~.animateBg {
-    clip-path: circle(70.7% at 50% 50%);
-} */
-/*Home End*/
-
-
-
-
-
-/*Content Start*/
-.sec1 {
-    position: relative;
-    padding: 100px 30px;
-    background-color: #fff;
-    /* transition: 5s; */
-    height: 100vh;
-    z-index: 99;
-    box-shadow: 0 0 50px var(--primary-color);
-}
-.sec1 .content {
-    /* background-color: #f3eec7; */
-}
-.sec1 .content .about1 {
-    padding: 0 300px;
-    display: flex;
-    /* background-color: aquamarine; */
-}
-.sec1 .content .about1 i {
-    /* background-color: blueviolet; */
-    font-size: 60px;
-    color: var(--primary-color);
-    margin-right: 10px;
-}
-/* .sec1 .content .about1 p {
-    color: var(--secondary-color);
-    z-index: 100;
-    font-size: 32px;
-    /* background-color: brown; 
-} */
-
-
-.sec1 .content .about1 .about1anim {
-    overflow: hidden;
-}
-.sec1 .content .about1 .about1anim span {
-    color: var(--primary-color);
-    z-index: 100;
-    font-size: 28px;
-    height: 100%;
-    display: flex;
-    transition: 1s;
-    transition-delay: 0.3s;
-    /* background-color: brown; */
-}
-.sec1 .content .about1 .about1anim span2 {
-    color: var(--primary-color);
-    font-size: 28px;
-}
-.sec1 .content .about1 .about1anim:hover span:nth-child(1) {
-    transform: translateY(-100%);
-}
-.sec1 .content .about1 .about1anim:hover span:nth-child(2) {
-    transform: translateY(-100%);
-}
-
-
-
-.sec1 .content2 .about2 {
-    /* padding: 0 300px; */
-    padding: 0 70px 0 0;
-    /* background-color: aqua; */
-}
-.sec1 .content2 {
-    display: flex;
-}
-.sec1 .content2 .about2 p {
-    color: var(--primary-color);
-    z-index: 100;
-    font-size: 20px;
-    text-align: justify;
-}
-.sec1 .content2 .button4 {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-}
-.sec1 .content2 .button4 .button-deco4 {
-    background: var(--primary-color);
-    width: 150px;
-    height: 150px;
-    border-radius: 100px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 0 30px var(--primary-color);
-    cursor: pointer;
-}
-.sec1 .content2 .button4 a {
-    color: #fff;
-    font-size: 20px;
-    font-weight: 700;
-    text-align: center;
-}
-
-
-.sec2 {
-    position: relative;
-    padding: 30px;
-    background-color: #fff;
-    /* transition: 5s; */
-    height: 100vh;
-    z-index: 99;
-}
-/*Content End*/
-
-
-
-/* Pointer Cursor Start*/
-@media (any-pointer: fine) {
-    .cursor, .cursor2, .cursor3, .cursor4 {
+/*INTRO START*/
+    .intro {
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: var(--primary-color);
+        transition: 1s;
+    }
+    .logo-header {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: #fff;
+    }
+    .logo-in {
+        font-size: 24px;
+        position: relative; 
+        display: inline-block;
+        bottom: -20px;
+        opacity: 0;
+        color: var(--secondary-color);
+    }
+    .logo-ast {
+        color: #fff;
+    }
+    .logo-in.active {
+        bottom: 0;
+        opacity: 1;
+        transition: ease-in-out 1s;
+    }
+    .logo-in.fade {
+        bottom: 150px;
+        opacity: 0;
+        transition: ease-in-out 1s;
+    }
+/*INTRO END*/
+/*HEADER START*/
+    .header-asteandi {
+        padding: 38px 30px 0 30px;
+        width: 100vw;
+        position: fixed;
+        transition: ease-in-out .5s;
+        z-index: 2;
+        /* background-color: aqua; */
+    }
+    .header-asteandi .navbar-asteandi {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .header-asteandi .navbar-asteandi .logonavbar-asteandi {
+        font-size: 20px;
+        font-weight: 800;
+        padding: 5px;
+        /* background-color: white; */
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+    }
+    .header-asteandi .navbar-asteandi .logonavbar-asteandi a:hover {
+        background-color: var(--primary-color);
+        color: #fff;
+    }
+    .navigation {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #111111d3;
+        backdrop-filter: blur(5px);
+        transition: 1.5s;
+        display: flex;
+        visibility: hidden;
+        /* opacity: 0;; */
+        z-index: 990;
+        clip-path: circle(0.0% at 96% 10%);
+    }
+    .navigation.active {
+        visibility: visible;
+        /* opacity: 1; */
+        position: fixed;
+        clip-path: circle(150% at 96% 10%);
+        z-index: 990;
+    }
+    .navigation .navArea {
+        position: relative;
+        width: 80%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 990;
+    }
+    .navigation .navArea ul li {
+        list-style: none;
+    }
+    .navigation .navArea ul li::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
-        display: block;
-        pointer-events: none;
-        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        background: #62b0bb;
+        z-index: -1;
+        opacity: 0;
+        transition: 0.5s;
     }
-    .cursor-inner, .cursor-inner2, .cursor-inner3, .cursor-inner4 {
-        fill: rgba(0, 0, 0, 0.165);
-        /*stroke: white;
-        stroke-width: 1px;*/
+    .navigation .navArea ul li:nth-child(1):before {
+        background: #2b8da3;
     }
-}
-/*Pointer Cursor End */
+    .navigation .navArea ul li:nth-child(2):before {
+        background: #ff9c9c;
+    }
+    .navigation .navArea ul li:nth-child(3):before {
+        background: #284166;
+    }
+    .navigation .navArea ul li:nth-child(4):before {
+        background: #fed0b1;
+    }
+    .navigation .navArea ul li:nth-child(5):before {
+        background: #b3b54f;
+    }
+    .navigation .navArea ul li:hover::before {
+        opacity: 1;
+    }
+    .navigation .navArea ul li a {
+        font-size: 3em;
+        font-weight: 800;
+        text-decoration: none;
+        color: white;
+    }
+    .navigation .navArea ul li:hover a {
+        color: var(--primary-color);
+    }
+    .imgArea {
+        position: relative;
+        width: 20%;
+        height: 100vh;
+        background: var(--secondary-color);
+    }
+    .imgArea img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .menuToggle {
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: var(--primary-color) url(../img/menu.png);
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.335);
+        z-index: 500;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 992;
+    }
+    .menuToggle.active {
+        background: var(--primary-color) url(../img/close.png);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.335);
+        border-radius: 10px;
+        z-index: 992;
+        background-size: 25px;
+        background-repeat: no-repeat;
+        background-position: center;
+        /* filter: invert(1); */
+    }
+/*HEADER END*/
+
+/*CONTENT START*/
+    /*BACKGROUND HOME START*/
+    .backgroundhome-asteandi {
+        content: '';
+        width: 100vw;
+        justify-content: center;
+        display: flex;
+        position: absolute;
+        z-index: -2;
+    }
+    .backgroundhome-asteandi img {
+        height: 100vh;
+        position: absolute;
+    }
+    /*BACKGROUND HOME END*/
+    /*HOME CONTENT START*/
+    .content-asteandi .home-asteandi {
+        height: 100vh;
+    }
+    .content-asteandi .home-asteandi .homespacetop-asteandi {
+        height: 40%;
+        width: 100vw;
+        display: flex;
+        justify-content: end;
+        align-items: end;
+        /* background-color: aquamarine; */
+    }
+    .content-asteandi .home-asteandi .homenamemiddle-asteandi {
+        height: 20%;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        /* background-color: white; */
+        /* padding: 0 30px; */
+    }
+    .content-asteandi .home-asteandi .homenamemiddle-asteandi .iso-marquee-linkwrap {
+        display: flex;
+        position: fixed;
+        width: 100vw;
+        z-index: -4;
+        /* background-color: #a4b2b7; */
+    }
+    .iso-marquee {
+        font-size: 10vw;
+        width: 100vw;
+        overflow: hidden;
+        /* background-color:#222232; */
+    } 
+    .iso-marquee--long {
+        font-size: 6vw;
+    }
+    .iso-marquee-linkwrap a {
+        color: white;
+    }
+    .iso-marquee span {
+        display: inline-block;
+        white-space: nowrap;
+        font-family: var(--heading-font);
+        /* font-size: 5.5vw; */
+        width: var(--tw);
+        text-shadow: var(--tw) 0 currentColor, calc(var(--tw) * 2) 0 currentColor, calc(var(--tw) * 3) 0 currentColor, calc(var(--tw) * 4) 0 currentColor;
+        will-change: transform;
+        animation: iso-marquee var(--ad) linear infinite;
+        animation-play-state: play;
+    }
+    @keyframes iso-marquee {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(-100%); } }
+    @media (prefers-reduced-motion: reduce) {
+        .iso-marquee span {
+            animation: none;
+            text-shadow: none;
+            width: auto;
+            display: block;
+            line-height: 1.5;
+            text-align: center;
+            white-space: normal;
+        }
+    }
+    .content-asteandi .home-asteandi .descriptionbottom-asteandi {
+        height: 40%;
+        width: 100vw;
+        padding: 0 30px 30px 30px;
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        /* background-color: burlywood; */
+    }
+    .content-asteandi .home-asteandi .descriptionbottom-asteandi .location-asteandi {
+        /* display: flex; */
+        align-items: center;
+        z-index: -1;
+        gap: 5px;
+        /* background-color: #62b0bb; */
+    }
+    .content-asteandi .home-asteandi .descriptionbottom-asteandi .location-asteandi .loccont {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi {
+        /* background-color: #2b8da3; */
+        display: flex;
+        align-items: center;
+        z-index: -3;
+        /* padding: 0 160px; */
+    }
+    .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi img {
+        width: 150px;
+        position: fixed;
+        left: 30px;
+        /* position: absolute; */
+        /* left: -50px; */
+    }
+    .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi .location2 {
+        width: 150px;
+        /* left: -75px; */
+        /* top: 225px; */
+    }
+    .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi > .location {
+        animation: spin 7s infinite linear;
+    }
+    .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi > .location2 {
+        animation: spin 10s infinite linear reverse;
+    }
+
+    .content-asteandi .home-asteandi .descriptionbottom-asteandi .location-asteandi a {
+        font-size: 14px;
+        font-weight: 500;
+    }
+    .content-asteandi .home-asteandi .descriptionbottom-asteandi .location-asteandi span {
+        font-weight: 800;
+    }
+    .content-asteandi .home-asteandi .descriptionbottom-asteandi .location-asteandi i {
+        font-size: 26px;
+        cursor: pointer;
+    }
+    .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi {
+        justify-content: end;
+        z-index: -4;
+        /* padding-bottom: 30px; */
+        /* background-color: #62b0bb; */
+    }
+    .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi i {
+        font-size: 40px;
+        display: flex;
+        justify-content: end;
+    }
+    .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi h1 {
+        font-size: 18px;
+        font-weight: 600;
+        text-align: right;
+    }
+    /*HOME CONTENT END*/
+    /*CONTENT UTAMA START*/
+        /*CONTENT 1 ABOUT START*/
+            .content-asteandi .content1-asteandi {
+                min-height: 100vh;
+                width: 100vw;
+                padding: 100px 0;
+                box-shadow: 0 0 50px black;
+                background-color: white;
+            }
+            .content-asteandi .content1-asteandi .about-asteandi {
+                text-align: justify;
+                padding: 0 200px;
+            }
+            .content-asteandi .content1-asteandi .about-asteandi span {
+                font-size: 38px;
+                font-weight: 600;
+            }
+            .content-asteandi .content1-asteandi .descriptionabout-asteandi {
+                display: flex;
+                /* border-bottom: solid 5px; */
+                padding: 0 200px 70px 200px;
+                /* background-color: #62b0bb; */
+            }
+            .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi {
+                display: flex;
+                justify-content: center;
+                margin-top: 50px;
+            }
+            .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout {
+                height: 200px;
+                width: 200px;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-weight: 800;
+                align-items: center;
+                /* background-color: var(--primary-color); */
+                background: linear-gradient(90deg, #09353b 0%, #0a4a54 100%);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.716);
+                cursor: pointer;
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+            }
+            .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout a {
+                color: white;
+                transform: translateZ(60px);
+                text-shadow: 0 5px 20px black;
+            }
+            .content-asteandi .content1-asteandi .descriptionabout-asteandi .description-asteandi {
+                text-align: justify;
+                padding: 50px 0 0 0;
+            }
+            .content-asteandi .content1-asteandi .descriptionabout-asteandi .description-asteandi p {
+                font-size: 22px;
+            }
+        /*CONTENT 1 ABOUT END*/
+        /*CONTENT 2 WORK START*/
+            .content-asteandi .content1-asteandi .contentutama-asteandi {
+                min-height: 1250px;
+                padding: 30px 0;
+                /* background-color: #62b0bb; */
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-wrap: wrap;
+                padding: 1em;
+                max-width: 1100px;
+                margin: 0 auto;
+                min-height: 100vh;
+                gap: 30px;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi * {
+                box-sizing: border-box;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
+                width: 17em;
+                background-color: #fff;
+                border-radius: 10px;
+                box-shadow: rgba(100, 100, 111, 0.618) 0px 7px 20px 0px;
+                position: relative;
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+                margin: 1em;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi:hover {
+                z-index: 20;
+            }
+            .gradientcard {
+                content: '';
+                position: absolute;
+                width: 320px;
+                height: 500px;
+                background: linear-gradient(0, #ffffff 0%, #ffffff40 100%);
+                bottom: -35px;
+                right: -23px;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi img {
+                height: 8em;
+                width: 8em;
+                font-weight: 800;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: 7em;
+                right: 0;
+                justify-content: center;
+                /* border-radius: 100%; */
+                /* box-shadow: rgba(100, 100, 111, 0.442) 0px 7px 29px 0px; */
+                /* background: linear-gradient(90deg, #48c5d8 0%, #0a4a54 100%); */
+                transform: translateZ(70px);
+                filter : drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.5));
+                /* text-shadow: rgba(100, 100, 111, 0.442) 0px 7px 29px 0px; */
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi span {
+                color: white;
+                transform: translateZ(80px);
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner-asteandi {
+                height: 15em;
+                background: var(--primary-color);
+                padding: 2em;
+                border-radius: 10px 10px 50% 0;
+                transform: translateZ(30px);
+                box-shadow: rgba(100, 100, 111, 0.442) 0px 7px 29px 0px;
+                transition: 0.5s;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner-asteandi h2 {
+                color: #fff;
+                /* margin: 0 0 0 0.8em; */
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi:hover .banner-asteandi {
+                filter: brightness(50%);
+                transition: 0.5s;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi:hover .gradientcard {
+                visibility: hidden;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner1 {
+                background: url(../img/img6.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner2 {
+                background: url(../img/img7.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner3 {
+                background: url(../img/img8.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner4 {
+                background: url(../img/img9.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner5 {
+                background: url(../img/img10.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner6 {
+                background: url(../img/img11.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-attachment: fixed;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi {
+                padding: 2em;
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .details-asteandi {
+                transform: translateZ(30px);
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .details-asteandi small {
+                display: block;
+                font-size: 0.8em;
+                text-align: justify;
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .cart-asteandi {
+                /* background: var(--primary-color); */
+                background: linear-gradient(90deg, #09353b 0%, #0a4a54 100%);
+                padding: 1em 1.1em;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 200px;
+                border-radius: 2em;
+                color: #fff;
+                border: none;
+                margin: 0 auto;
+                font-weight: 700;
+                box-shadow: rgba(89, 89, 96, 0.879) 0px 7px 29px 0px;
+                cursor: pointer;
+                margin-top: 30px;
+            }
+            .pop {
+                transform: translateY(-20%) translateZ(40px);
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
+                display: flex;
+                position: absolute;
+                padding: 0 200px;
+                transform: translateY(130px);
+                z-index: 1;
+                /* background-color: aqua; */
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork {
+                height: 200px;
+                width: 200px;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-weight: 800;
+                align-items: center;
+                /* background-color: var(--primary-color); */
+                background: linear-gradient(90deg, #09353b 0%, #0a4a54 100%);
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.716);
+                cursor: pointer;
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+            }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork a {
+                color: white;
+                transform: translateZ(60px);
+                text-shadow: 0 5px 20px black;
+            }
+        /*CONTENT 2 WORK END*/
+        /*CONTENT 3 MY THEME START*/
+            .content-asteandi .content1-asteandi .contentthemeasteandi {
+                min-height: 100vh;
+                width: 100vw;
+                padding: 0 200px 30px 200px;
+                /* background-color: #62b0bb; */
+            }
+            .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi {
+                padding: 30px 0;
+                border-bottom: solid 3px;
+                align-items: center;
+                display: flex;
+                justify-content: space-between;
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+                cursor: pointer;
+                /* background-color: aqua; */
+            }
+            .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi img {
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                visibility: hidden;
+                opacity: 0;
+                transition: 1s;
+            }
+            .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi .imgtop2 {
+                position: absolute;
+                height: 100%;
+                right: 0;
+                top: 0;
+                visibility: hidden;
+                opacity: 0;
+                transition: 1s;
+                z-index: 2;
+                shadow: rgba(100, 100, 111, 0.946) 0px 7px 29px 0px;
+            }
+            .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi:hover img {
+                transform: translateZ(60px);
+                filter : drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.5));
+                visibility: visible;
+                opacity: 1;
+                transition: 1s;
+            }
+            .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi:hover .imgtop2 {
+                transform: translateZ(90px);
+                filter : drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.5));
+                visibility: visible;
+                opacity: 1;
+                transition: 1s;
+            }
+            /* .content-asteandi .content1-asteandi .contentthemeasteandi .creative {
+                border-top: solid 3px;
+            } */
+            .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi:hover {
+                /* background-color: var(--primary-color); */
+                background: linear-gradient(90deg, #09353b 0%, #0a4a54 100%);
+            }
+            .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi:hover a {
+                color: white;
+                text-shadow: 0 5px 10px rgba(0, 0, 0, 0.69);
+                transform: translateX(30px) translateZ(80px);
+            }
+            .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi a {
+                font-size: 92px;
+                font-weight: 800;
+                /* text-shadow: 0 5px 10px rgba(0, 0, 0, 0.69); */
+            }
+        /*CONTENT 3 MY THEME END*/
+        /*FOOTER START*/
+            .content-asteandi .footer-asteandi {
+                height: 520px;
+                width: 100vw;
+                padding: 0 0 30px 0;
+                /* z-index: -1000; */
+                background-color: var(--primary-color);
+            }
+            .content-asteandi .footer-asteandi .iconprofile-asteandi {  
+                transform: translateY(-125px);
+            }
+            .content-asteandi .footer-asteandi .iconprofile-asteandi img {
+                width: 250px;
+                position: absolute;
+                left: 100px;
+                top: 0;
+            }
+            .content-asteandi .footer-asteandi .iconprofile-asteandi .icon1 {
+                position: fixed;
+                animation: spin 10s infinite linear reverse;
+            }
+            .content-asteandi .footer-asteandi .moto-asteandi {
+                width: 100vw;
+                height: 35%;
+                padding: 130px 100px 0 100px;
+                /* background-color: #62b0bb; */
+            }
+            .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi {
+                display: flex;
+                justify-content: end;
+                align-items: center;
+                border-bottom: solid 3px #fff;
+                /* background-color: aquamarine; */
+            }
+            .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi .together {
+                background-color: #fff;
+                border-radius: 0 30px 0 0;
+            }
+            .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi h2 {
+                padding: 0 15px;
+                font-size: 48px;
+            }
+            .content-asteandi .footer-asteandi .buttoncontact-asteandi {
+                width: 100vw;
+                height: 10%;
+                display: flex;
+                align-items: center;
+                padding: 0 100px 0 100px;
+                /* background-color: #62b0bb; */
+            }
+            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi {
+                display: flex;
+                align-items: center;
+                height: 50px;
+                gap: 15px;
+                /* background-color: aquamarine; */
+            }
+            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi {
+                height: 40px;
+                width: 280px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: solid 3px white;
+                background-color: #0a4a54;
+                border-radius: 10px;
+                color: white;
+            }
+            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi {
+                height: 40px;
+                width: 180px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: solid 3px white;
+                background-color: #0a4a54;
+                border-radius: 10px;
+                color: white;
+            }
+            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi {
+                height: 40px;
+                width: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                border: solid 3px white;
+                background-color: #0a4a54;
+                border-radius: 10px;
+                color: white;
+            }
+            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi i {
+                font-size: 30px;
+                color: white;
+            }
+            .content-asteandi .footer-asteandi .buttonget-asteandi {
+                display: flex;
+                align-items: start;
+                height: 30%;
+                padding: 0 125px;
+                /* background-color: aqua; */
+            }
+            .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget {
+                height: 200px;
+                width: 200px;
+                border-radius: 100%;
+                display: flex;
+                justify-content: center;
+                font-size: 20px;
+                font-weight: 800;
+                align-items: center;
+                background-color: var(--primary-color);
+                /* background: linear-gradient(90deg, #040404 0%, #535353 100%); */
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.716);
+                cursor: pointer;
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+            }
+            .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget a {
+                color: white;
+                transform: translateZ(60px);
+                text-shadow: 0 5px 20px black;
+            }
+            .content-asteandi .footer-asteandi .medsos-asteandi {
+                height: 20%;
+                width: 100vw;
+                padding: 0 100px;
+                display: flex;
+                align-items: center;
+                justify-content: end;
+                /* background-color: aquamarine; */
+            }
+            .content-asteandi .footer-asteandi .medsos-asteandi h4, .content-asteandi .footer-asteandi .medsos-asteandi i {
+                color: #fff;
+                font-weight: 300;
+            }
+            .content-asteandi .footer-asteandi .medsos-asteandi h4 {
+                margin-right: 20px;
+            }
+            .content-asteandi .footer-asteandi .medsos-asteandi a {
+                display: flex;
+                align-items: center;
+            }
+            .content-asteandi .footer-asteandi .medsos-asteandi i {
+                font-size: 26px;
+            }
+        /*FOOTER END*/
+    /*CONTENT UTAMA END*/
+/*CONTENT END*/
+/*TOOLTIP HOVER START*/
+    .tooltiphover {
+        font-size: 14px;
+        position: absolute;
+        left: 135px;
+        background-color: #fff;
+        width: auto;
+        padding: 3.5px 10px;
+        border-radius: 7px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        /* visibility: hidden;*/
+        opacity: 0.5;
+        transition: 0.5s;
+    }
+    .header-asteandi .navbar-asteandi .logonavbar-asteandi:hover .tooltiphover {
+        transform: translateX(12px);
+        visibility: visible;
+        opacity: 1;
+    }
+    .tooltiphover::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        z-index: -1;
+        transform: rotate(45deg) translateY(-60%);
+    }
+    .tooltiphovermenu {
+        font-size: 14px;
+        font-weight: 600;
+        position: absolute;
+        top: 12px;
+        right: 50px;
+        background-color: #fff;
+        width: auto;
+        padding: 3.5px 10px;
+        border-radius: 7px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .menuToggle:hover .tooltiphovermenu {
+        transform: translateX(-20px);
+        visibility: visible;
+        opacity: 1;
+    }
+    .tooltiphovermenu::before {
+        content: '';
+        position: absolute;
+        top: 48%;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        z-index: -1;
+        transform: rotate(45deg) translateY(-60%);
+    }
+    .tooltipwork {
+        font-size: 14px;
+        font-weight: 600;
+        position: absolute;
+        top: 164px;
+        right: 120px;
+        background-color: var(--primary-color);
+        color: #fff;
+        width: 150px;
+        padding: 3.5px 10px;
+        border-radius: 7px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi:hover .tooltipwork {
+        right: 150px;
+        visibility: visible;
+        opacity: 1;
+        color: #fff;
+    }
+    .tooltipwork::before {
+        content: '';
+        position: absolute;
+        top: 48%;
+        right: 0;
+        width: 12px;
+        height: 12px;
+        background-color: var(--primary-color);
+        z-index: -1;
+        transform: rotate(45deg) translateY(-60%);
+    }
+    .tooltipbutton {
+        font-size: 48px;
+        font-weight: 600;
+        position: absolute;
+        top: -15px;
+        right: -50px;
+        color: white;
+        width: auto;
+        height: auto;
+        padding: 3.5px 10px;
+        border-radius: 7px;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.497);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout:hover .tooltipbutton {
+        right: -80px;
+        visibility: visible;
+        opacity: 1;
+    }
+    .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork:hover .tooltipbutton {
+        right: -80px;
+        visibility: visible;
+        opacity: 1;
+    }
+    .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget:hover .tooltipbutton {
+        right: -80px;
+        visibility: visible;
+        opacity: 1;
+    }
+    .tooltipmail {
+        font-size: 14px;
+        font-weight: 600;
+        position: absolute;
+        top: -30px;
+        right: 48px;
+        background-color: #fff;
+        color: var(--primary-color);
+        width: auto;
+        height: auto;
+        padding: 3.5px 10px;
+        border-radius: 7px;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.497);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi:hover .tooltipmail {
+        visibility: visible;
+        opacity: 1;
+        top: -45px;
+    }
+    .tooltipmail::before {
+        content: '';
+        position: absolute;
+        top: 90%;
+        right: 87px;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        z-index: -1;
+        transform: rotate(45deg) translateY(-60%);
+    }
+    .tooltipphone {
+        font-size: 14px;
+        font-weight: 600;
+        position: absolute;
+        top: -30px;
+        right: 22px;
+        background-color: #fff;
+        color: var(--primary-color);
+        width: auto;
+        height: auto;
+        padding: 3.5px 10px;
+        border-radius: 7px;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.497);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+    }
+    .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi:hover .tooltipphone {
+        visibility: visible;
+        opacity: 1;
+        top: -45px;
+    }
+    .tooltipphone::before {
+        content: '';
+        position: absolute;
+        top: 90%;
+        right: 63px;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        z-index: -1;
+        transform: rotate(45deg) translateY(-60%);
+    }
+    .tooltipwa {
+        font-size: 14px;
+        font-weight: 600;
+        position: absolute;
+        top: -50px;
+        right: -56px;
+        background-color: #fff;
+        color: var(--primary-color);
+        width: 150px;
+        padding: 3.5px 10px;
+        border-radius: 7px;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.497);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+        text-align: center;
+    }
+    .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi:hover .tooltipwa {
+        visibility: visible;
+        opacity: 1;
+        top: -65px;
+    }
+    .tooltipwa::before {
+        content: '';
+        position: absolute;
+        top: 95%;
+        right: 72px;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        z-index: -1;
+        transform: rotate(45deg) translateY(-60%);
+    }
+    .tooltiplatest {
+        font-size: 10px;
+        font-weight: 600;
+        position: absolute;
+        top: 50px;
+        left: -30px;
+        background-color: #fff;
+        /* color: var(--primary-color); */
+        width: auto;
+        padding: 3.5px 10px;
+        border-radius: 7px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.346);
+        visibility: hidden;
+        opacity: 0;
+        transition: 0.5s;
+        text-align: center;
+        rotate: -90deg;
+    }
+    .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi:hover .tooltiplatest {
+        top: 50px;
+        left: -50px;
+        visibility: visible;
+        opacity: 1;
+        color: var(--primary-color);
+    }
+/*TOOLTIP HOVER END*/
+
+/*MEDIA START*/
+    @media (max-width: 1200px) {
+        .content-asteandi .footer-asteandi .iconprofile-asteandi img {
+            left: 30px;
+        }
+        .content-asteandi .footer-asteandi .moto-asteandi {
+            padding: 130px 30px 0 30px;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi {
+            padding: 0 30px 0 30px;
+        }
+        .content-asteandi .footer-asteandi .buttonget-asteandi {
+            padding: 0 58px;
+        }
+        .content-asteandi .footer-asteandi .medsos-asteandi {
+            padding: 0 30px;
+        }
+    }  
+    @media (max-width: 1000px) {
+        .content-asteandi .content1-asteandi .about-asteandi {
+            padding: 0 100px;
+        }
+        .content-asteandi .content1-asteandi .descriptionabout-asteandi {
+            display: flex;
+            /* border-bottom: solid 5px; */
+            padding: 0 100px 70px 100px;
+            /* background-color: #62b0bb; */
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi {
+            padding: 0;
+            gap: 0;
+        }
+        .gradientcard {
+            visibility: hidden;
+            opacity: 0;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
+            padding: 0 30px;
+            transform: translateY(200px);
+            /* background-color: aqua; */
+        }
+        .content-asteandi .content1-asteandi .contentthemeasteandi {
+            padding: 0 100px 30px 100px;
+        }
+    }
+    @media (max-width: 900px) {
+        .iso-marquee--long {
+            font-size: 7.5vw;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi {
+            min-height: 1750px;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
+            padding: 0 30px;
+            transform: translateY(250px);
+            /* background-color: aqua; */
+        }
+    }
+    @media (max-width: 768px) {
+        .navigation .navArea {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 10;
+        }
+        .navigation .navArea ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .navigation .navArea ul li {
+            background: white;
+            margin: 5px 10px;
+            padding: 5px 10px;
+        }
+        .navigation .navArea ul li:hover {
+            background: grey;
+        }
+        .navigation .navArea ul li a {
+            color: black;
+            font-size: 2em;
+            letter-spacing: 2px;
+        }
+        .imgArea {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-color: #62b0bb;
+        }
+        .navigation .navArea ul li:hover::before {
+            opacity: 0;
+        }
+        .imgArea {
+            position: absolute;
+            width: 100%;
+            height: 100vh;
+            background-color: #62b0bb;
+            opacity: 0.7;
+        }
+        .content-asteandi .content1-asteandi .contentthemeasteandi {
+            padding: 0 30px 30px 30px;
+        }
+        .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi a {
+            font-size: 48px;
+        }
+    }
+    @media (max-width: 664px) {
+        .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi {
+            z-index: -1;
+        }
+        .iso-marquee--long {
+            font-size: 9vw;
+        }
+        .content-asteandi .home-asteandi .homenamemiddle-asteandi .iso-marquee-linkwrap {
+            z-index: -2;
+        }
+        .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi {
+            z-index: -2;
+        }
+        .content-asteandi .content1-asteandi .about-asteandi {
+            text-align: justify;
+            padding: 0 30px;
+        }
+        .content-asteandi .content1-asteandi .about-asteandi span {
+            font-size: 24px;
+        }
+        .content-asteandi .content1-asteandi .descriptionabout-asteandi {
+            padding: 0 30px 50px 30px;
+        }
+        .content-asteandi .content1-asteandi .descriptionabout-asteandi .description-asteandi {
+            padding: 30px 0 0 0;
+        }
+        .content-asteandi .content1-asteandi .descriptionabout-asteandi .description-asteandi p {
+            font-size: 16px;
+        }
+    }
+    @media (max-width: 600px) {
+        .content-asteandi .content1-asteandi {
+            box-shadow: none;
+        }
+        .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi h2 {
+            font-size: 30px;
+        }
+        /* .content-asteandi .footer-asteandi .buttoncontact-asteandi {
+            background-color: #2b8da3;
+        } */
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi {
+            height: 40px;
+            width: 180px;
+            display: flex;
+            font-size: 10px;
+            align-items: center;
+            justify-content: center;
+            border: solid 3px white;
+            background-color: #0a4a54;
+            border-radius: 10px;
+            color: white;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi {
+            height: 40px;
+            width: 120px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid 3px white;
+            background-color: #0a4a54;
+            border-radius: 10px;
+            color: white;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid 3px white;
+            background-color: #0a4a54;
+            border-radius: 10px;
+            color: white;
+        }
+        .iso-marquee--long {
+            font-size: 12vw;
+        }
+    }
+    @media (max-width: 480px) {
+        .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout {
+            height: 150px;
+            width: 150px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork {
+            height: 150px;
+            width: 150px;
+            font-size: 20px;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
+            transform: translateY(320px);
+        }
+        .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget {
+            height: 150px;
+            width: 150px;
+            font-size: 20px;
+        }
+        .content-asteandi .footer-asteandi .iconprofile-asteandi {  
+            transform: translateY(-85px);
+        }
+        .content-asteandi .footer-asteandi .iconprofile-asteandi img {
+            width: 180px;
+            left: 30px;
+        }
+        .content-asteandi .footer-asteandi {
+            padding: 0;
+        }
+    }
+    @media (max-width: 480px) {
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi {
+            height: 10%; 
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi {
+            display: block;
+            align-items: start;
+            height: 50px;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi a {
+            margin-bottom: 5px;
+        }
+        .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi h2 {
+            font-size: 22px;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi {
+            height: 40px;
+            width: 200px;
+            display: flex;
+            font-size: 12px;
+            align-items: center;
+            justify-content: center;
+            border: solid 3px white;
+            background-color: #0a4a54;
+            border-radius: 10px;
+            color: white;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi {
+            height: 40px;
+            width: 130px;
+            font-size: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid 3px white;
+            background-color: #0a4a54;
+            border-radius: 10px;
+            color: white;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid 3px white;
+            background-color: #0a4a54;
+            border-radius: 10px;
+            color: white;
+        }
+        .content-asteandi .footer-asteandi .buttonget-asteandi {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+        }
+        .iso-marquee--long {
+            font-size: 15.5vw;
+        }
+        .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi img {
+            width: 120px;
+        }
+        .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi .location2 {
+            width: 120px;
+        }
+    }
+    @media (max-width: 350px) {
+        .tooltiphover {
+            font-size: 14px;
+            position: absolute;
+            top: 35px;
+            left: 3px;
+            background-color: #fff;
+            width: auto;
+            padding: 3.5px 10px;
+            border-radius: 7px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            /* visibility: hidden;*/
+            opacity: 0.5;
+            transition: 0.5s;
+        }
+        .header-asteandi .navbar-asteandi .logonavbar-asteandi:hover .tooltiphover {
+            transform: translateY(12px);
+            visibility: visible;
+            opacity: 1;
+        }
+        .tooltiphover::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 40%;
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            z-index: -1;
+            transform: rotate(45deg) translateY(-60%);
+        }
+        .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi img {
+            width: 100px;
+        }
+        .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi .location2 {
+            width: 100px;
+        }
+        .content-asteandi .content1-asteandi .descriptionabout-asteandi {
+            display: block;
+        }
+        .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi {
+            display: flex;
+            justify-content: start;
+        }
+        .iso-marquee--long {
+            font-size: 17vw;
+        }
+    }
+    @media (max-width: 320px) {
+        .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi i {
+            font-size: 30px;
+        }
+        .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi h1 {
+            font-size: 12px;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
+            width: 14em;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .cart-asteandi {
+            width: 100px;
+        }
+        .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi a {
+            font-size: 30px;
+        }
+        .backgroundhome-asteandi img {
+            /* position: fixed;
+            overflow: hidden; */
+            visibility: hidden;
+            opacity: 0;
+        }
+        .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi h2 {
+            font-size: 18px;
+        }
+        body {
+            
+            background: url(../img/1.jpg);
+        }
+        .iso-marquee--long {
+            font-size: 22vw;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi {
+            height: 40px;
+            width: 150px;
+            display: flex;
+            font-size: 9px;
+            align-items: center;
+            justify-content: center;
+            border: solid 3px white;
+            background-color: #0a4a54;
+            border-radius: 10px;
+            color: white;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi {
+            height: 40px;
+            width: 100px;
+            font-size: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid 3px white;
+            background-color: #0a4a54;
+            border-radius: 10px;
+            color: white;
+        }
+        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi {
+            height: 40px;
+            width: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: solid 3px white;
+            background-color: #0a4a54;
+            border-radius: 10px;
+            color: white;
+        }
+        .content-asteandi .footer-asteandi .buttonget-asteandi {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+        }
+        .content-asteandi .footer-asteandi .buttonget-asteandi {
+            display: flex;
+            align-items: end;
+            justify-content: end;
+        }
+        .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout {
+            height: 150px;
+            width: 150px;
+            font-size: 20px;
+            font-weight: 800;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork {
+            height: 100px;
+            width: 100px;
+            font-size: 16px;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
+            transform: translateY(400px);
+        }
+        .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget {
+            height: 100px;
+            width: 100px;
+            font-size: 16px;
+        }
+        .header-asteandi .navbar-asteandi {
+            visibility: hidden;
+        }
+        /* .content-asteandi .footer-asteandi .iconprofile-asteandi img {
+            width: 100px;
+            left: 30px;
+        } */
+        .navigation .navArea ul li a {
+            font-size: 1em;
+        }
+        .menuToggle {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--primary-color) url(../img/menu.png);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.335);
+            z-index: 500;
+            background-size: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 992;
+        }
+        .content-asteandi .footer-asteandi .medsos-asteandi i {
+            font-size: 22px;
+        }
+        .content-asteandi .footer-asteandi .medsos-asteandi h4 {
+            margin-right: 6px;
+            font-size: 10px;
+        }
+    }
+/*MEDIA END*/
