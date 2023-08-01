@@ -79,7 +79,7 @@
 /*HEADER START*/
     .header-asteandi {
         padding: 38px 30px 0 30px;
-        width: 100vw;
+        width: auto;
         position: fixed;
         transition: ease-in-out .5s;
         z-index: 2;
@@ -89,6 +89,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
+        /* background-color: #2b8da3; */
     }
     .header-asteandi .navbar-asteandi .logonavbar-asteandi {
         font-size: 20px;
@@ -219,6 +220,13 @@
         /* filter: invert(1); */
     }
 /*HEADER END*/
+
+.backcustom {
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    z-index: -10000;
+}
 
 /*CONTENT START*/
     /*BACKGROUND HOME START*/
@@ -424,6 +432,9 @@
                 transform: translateZ(60px);
                 text-shadow: 0 5px 20px black;
             }
+            .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi:hover {
+                filter: grayscale(100%);
+            }
             .content-asteandi .content1-asteandi .descriptionabout-asteandi .description-asteandi {
                 text-align: justify;
                 padding: 50px 0 0 0;
@@ -615,6 +626,9 @@
                 transform-style: preserve-3d;
                 transform: perspective(1000px);
             }
+            .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi:hover {
+                filter: grayscale(100%);
+            }
             .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork a {
                 color: white;
                 transform: translateZ(60px);
@@ -657,7 +671,7 @@
                 opacity: 0;
                 transition: 1s;
                 z-index: 2;
-                shadow: rgba(100, 100, 111, 0.946) 0px 7px 29px 0px;
+                /* shadow: rgba(100, 100, 111, 0.946) 0px 7px 29px 0px; */
             }
             .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi:hover img {
                 transform: translateZ(60px);
@@ -693,148 +707,108 @@
         /*CONTENT 3 MY THEME END*/
         /*FOOTER START*/
             .content-asteandi .footer-asteandi {
-                height: 520px;
+                height: 400px;
                 width: 100vw;
-                padding: 0 0 30px 0;
-                /* z-index: -1000; */
+                padding: 0 30px 30px 30px;
                 background-color: var(--primary-color);
             }
-            .content-asteandi .footer-asteandi .iconprofile-asteandi {  
-                transform: translateY(-125px);
+            .content-asteandi .footer-asteandi .iconprofile-asteandi { 
+                display: flex;
+                justify-content: center; 
+                /* background-color: #2b8da3; */
+                position: absolute;
+                left: 25%;
+                right: 25%;
+                transform: translateY(-40px);
             }
             .content-asteandi .footer-asteandi .iconprofile-asteandi img {
-                width: 250px;
-                position: absolute;
-                left: 100px;
+                width: 300px;
                 top: 0;
             }
             .content-asteandi .footer-asteandi .iconprofile-asteandi .icon1 {
-                position: fixed;
                 animation: spin 10s infinite linear reverse;
+                position: absolute;
             }
-            .content-asteandi .footer-asteandi .moto-asteandi {
-                width: 100vw;
+            .content-asteandi .footer-asteandi .iconprofile-asteandi .icon2 {
+                position: absolute;
+            }
+            .content-asteandi .footer-asteandi .iconprofile-asteandi .icon2:hover {
+                filter: grayscale(100%);
+                animation: spin 10s infinite linear;
+            }
+            .content-asteandi .footer-asteandi .wadah1 {
+                /* width: 100vw; */
+                height: 50%;
+                /* background-color: #2b8da3; */
+            }
+            .content-asteandi .footer-asteandi .wadah2 {
+                /* width: 100vw; */
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 height: 35%;
-                padding: 130px 100px 0 100px;
-                /* background-color: #62b0bb; */
-            }
-            .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi {
-                display: flex;
-                justify-content: end;
-                align-items: center;
-                border-bottom: solid 3px #fff;
-                /* background-color: aquamarine; */
-            }
-            .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi .together {
-                background-color: #fff;
-                border-radius: 0 30px 0 0;
-            }
-            .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi h2 {
-                padding: 0 15px;
-                font-size: 48px;
-            }
-            .content-asteandi .footer-asteandi .buttoncontact-asteandi {
-                width: 100vw;
-                height: 10%;
-                display: flex;
-                align-items: center;
-                padding: 0 100px 0 100px;
-                /* background-color: #62b0bb; */
-            }
-            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi {
-                display: flex;
-                align-items: center;
-                height: 50px;
-                gap: 15px;
-                /* background-color: aquamarine; */
-            }
-            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi {
-                height: 40px;
-                width: 280px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: solid 3px white;
-                background-color: #0a4a54;
-                border-radius: 10px;
-                color: white;
-            }
-            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi {
-                height: 40px;
-                width: 180px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: solid 3px white;
-                background-color: #0a4a54;
-                border-radius: 10px;
-                color: white;
-            }
-            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi {
-                height: 40px;
-                width: 40px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border: solid 3px white;
-                background-color: #0a4a54;
-                border-radius: 10px;
-                color: white;
-            }
-            .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi i {
-                font-size: 30px;
-                color: white;
-            }
-            .content-asteandi .footer-asteandi .buttonget-asteandi {
-                display: flex;
-                align-items: start;
-                height: 30%;
-                padding: 0 125px;
                 /* background-color: aqua; */
             }
-            .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget {
-                height: 200px;
-                width: 200px;
-                border-radius: 100%;
-                display: flex;
-                justify-content: center;
-                font-size: 20px;
-                font-weight: 800;
-                align-items: center;
-                background-color: var(--primary-color);
-                /* background: linear-gradient(90deg, #040404 0%, #535353 100%); */
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.716);
-                cursor: pointer;
-                transform-style: preserve-3d;
-                transform: perspective(1000px);
-            }
-            .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget a {
-                color: white;
-                transform: translateZ(60px);
-                text-shadow: 0 5px 20px black;
-            }
-            .content-asteandi .footer-asteandi .medsos-asteandi {
-                height: 20%;
-                width: 100vw;
-                padding: 0 100px;
-                display: flex;
-                align-items: center;
-                justify-content: end;
-                /* background-color: aquamarine; */
-            }
-            .content-asteandi .footer-asteandi .medsos-asteandi h4, .content-asteandi .footer-asteandi .medsos-asteandi i {
+            .content-asteandi .footer-asteandi .wadah2 h4 {
                 color: #fff;
+                font-size: 14px;
                 font-weight: 300;
             }
-            .content-asteandi .footer-asteandi .medsos-asteandi h4 {
-                margin-right: 20px;
-            }
-            .content-asteandi .footer-asteandi .medsos-asteandi a {
+            .content-asteandi .footer-asteandi .wadah2 .getintouch {
+                height: 50px;
+                width: 150px;
                 display: flex;
                 align-items: center;
+                justify-content: center;
+                padding: 15px;
+                border-radius: 30px;
+                background-color: #fff;
+                margin-bottom: 20px;
+                font-size: 14px;
+                font-weight: 800;
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.463);
             }
-            .content-asteandi .footer-asteandi .medsos-asteandi i {
-                font-size: 26px;
+            .content-asteandi .footer-asteandi .wadah2 .getintouch span {
+                transform: translateZ(60px);
+                text-shadow: rgba(0, 0, 0, 0.918) 0 5px 10px;
+            }
+            .content-asteandi .footer-asteandi .wadah3 {
+                /* width: 100vw; */
+                height: 15%;
+                display: flex;
+                border-top: solid 1px #fff;
+                /* background-color:cadetblue; */
+            }
+            .content-asteandi .footer-asteandi .wadah3 .getincontact {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: end;
+                /* align-items: end; */
+                /* background-color: #b3b54f; */
+            }
+            .content-asteandi .footer-asteandi .wadah3 .getincontact a {
+                font-weight: 300;
+                color: #fff;
+                width: 300px;
+                /* background-color: #2b8da3; */
+            }
+            .content-asteandi .footer-asteandi .wadah3 .getinsosmed {
+                width: 50%;
+                height: 100%;
+                display: flex;
+                align-items: end;
+                justify-content: end;
+                gap: 5px;
+                /* background-color: #b3b54f; */
+            }
+            .content-asteandi .footer-asteandi .wadah3 .getinsosmed i {
+                color: #fff;
+                font-size: 24px;
             }
         /*FOOTER END*/
     /*CONTENT UTAMA END*/
@@ -959,110 +933,6 @@
         visibility: visible;
         opacity: 1;
     }
-    .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget:hover .tooltipbutton {
-        right: -80px;
-        visibility: visible;
-        opacity: 1;
-    }
-    .tooltipmail {
-        font-size: 14px;
-        font-weight: 600;
-        position: absolute;
-        top: -30px;
-        right: 48px;
-        background-color: #fff;
-        color: var(--primary-color);
-        width: auto;
-        height: auto;
-        padding: 3.5px 10px;
-        border-radius: 7px;
-        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.497);
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.5s;
-    }
-    .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi:hover .tooltipmail {
-        visibility: visible;
-        opacity: 1;
-        top: -45px;
-    }
-    .tooltipmail::before {
-        content: '';
-        position: absolute;
-        top: 90%;
-        right: 87px;
-        width: 12px;
-        height: 12px;
-        background-color: #fff;
-        z-index: -1;
-        transform: rotate(45deg) translateY(-60%);
-    }
-    .tooltipphone {
-        font-size: 14px;
-        font-weight: 600;
-        position: absolute;
-        top: -30px;
-        right: 22px;
-        background-color: #fff;
-        color: var(--primary-color);
-        width: auto;
-        height: auto;
-        padding: 3.5px 10px;
-        border-radius: 7px;
-        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.497);
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.5s;
-    }
-    .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi:hover .tooltipphone {
-        visibility: visible;
-        opacity: 1;
-        top: -45px;
-    }
-    .tooltipphone::before {
-        content: '';
-        position: absolute;
-        top: 90%;
-        right: 63px;
-        width: 12px;
-        height: 12px;
-        background-color: #fff;
-        z-index: -1;
-        transform: rotate(45deg) translateY(-60%);
-    }
-    .tooltipwa {
-        font-size: 14px;
-        font-weight: 600;
-        position: absolute;
-        top: -50px;
-        right: -56px;
-        background-color: #fff;
-        color: var(--primary-color);
-        width: 150px;
-        padding: 3.5px 10px;
-        border-radius: 7px;
-        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.497);
-        visibility: hidden;
-        opacity: 0;
-        transition: 0.5s;
-        text-align: center;
-    }
-    .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi:hover .tooltipwa {
-        visibility: visible;
-        opacity: 1;
-        top: -65px;
-    }
-    .tooltipwa::before {
-        content: '';
-        position: absolute;
-        top: 95%;
-        right: 72px;
-        width: 12px;
-        height: 12px;
-        background-color: #fff;
-        z-index: -1;
-        transform: rotate(45deg) translateY(-60%);
-    }
     .tooltiplatest {
         font-size: 10px;
         font-weight: 600;
@@ -1091,23 +961,6 @@
 /*TOOLTIP HOVER END*/
 
 /*MEDIA START*/
-    @media (max-width: 1200px) {
-        .content-asteandi .footer-asteandi .iconprofile-asteandi img {
-            left: 30px;
-        }
-        .content-asteandi .footer-asteandi .moto-asteandi {
-            padding: 130px 30px 0 30px;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi {
-            padding: 0 30px 0 30px;
-        }
-        .content-asteandi .footer-asteandi .buttonget-asteandi {
-            padding: 0 58px;
-        }
-        .content-asteandi .footer-asteandi .medsos-asteandi {
-            padding: 0 30px;
-        }
-    }  
     @media (max-width: 1000px) {
         .content-asteandi .content1-asteandi .about-asteandi {
             padding: 0 100px;
@@ -1234,47 +1087,9 @@
         .content-asteandi .content1-asteandi {
             box-shadow: none;
         }
-        .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi h2 {
-            font-size: 30px;
-        }
         /* .content-asteandi .footer-asteandi .buttoncontact-asteandi {
             background-color: #2b8da3;
         } */
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi {
-            height: 40px;
-            width: 180px;
-            display: flex;
-            font-size: 10px;
-            align-items: center;
-            justify-content: center;
-            border: solid 3px white;
-            background-color: #0a4a54;
-            border-radius: 10px;
-            color: white;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi {
-            height: 40px;
-            width: 120px;
-            font-size: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: solid 3px white;
-            background-color: #0a4a54;
-            border-radius: 10px;
-            color: white;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi {
-            height: 40px;
-            width: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: solid 3px white;
-            background-color: #0a4a54;
-            border-radius: 10px;
-            color: white;
-        }
         .iso-marquee--long {
             font-size: 12vw;
         }
@@ -1294,77 +1109,6 @@
         .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
             transform: translateY(320px);
         }
-        .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget {
-            height: 150px;
-            width: 150px;
-            font-size: 20px;
-        }
-        .content-asteandi .footer-asteandi .iconprofile-asteandi {  
-            transform: translateY(-85px);
-        }
-        .content-asteandi .footer-asteandi .iconprofile-asteandi img {
-            width: 180px;
-            left: 30px;
-        }
-        .content-asteandi .footer-asteandi {
-            padding: 0;
-        }
-    }
-    @media (max-width: 480px) {
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi {
-            height: 10%; 
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi {
-            display: block;
-            align-items: start;
-            height: 50px;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi a {
-            margin-bottom: 5px;
-        }
-        .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi h2 {
-            font-size: 22px;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi {
-            height: 40px;
-            width: 200px;
-            display: flex;
-            font-size: 12px;
-            align-items: center;
-            justify-content: center;
-            border: solid 3px white;
-            background-color: #0a4a54;
-            border-radius: 10px;
-            color: white;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi {
-            height: 40px;
-            width: 130px;
-            font-size: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: solid 3px white;
-            background-color: #0a4a54;
-            border-radius: 10px;
-            color: white;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi {
-            height: 40px;
-            width: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: solid 3px white;
-            background-color: #0a4a54;
-            border-radius: 10px;
-            color: white;
-        }
-        .content-asteandi .footer-asteandi .buttonget-asteandi {
-            display: flex;
-            align-items: end;
-            justify-content: end;
-        }
         .iso-marquee--long {
             font-size: 15.5vw;
         }
@@ -1373,6 +1117,19 @@
         }
         .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi .location2 {
             width: 120px;
+        }
+        .content-asteandi .footer-asteandi .iconprofile-asteandi img {
+            width: 200px;
+        }
+        .content-asteandi .footer-asteandi .wadah2 h4 {
+            font-size: 10px;
+        }
+        .content-asteandi .footer-asteandi .wadah3 .getincontact a {
+            font-weight: 300;
+            font-size: 12px;
+        }
+        .content-asteandi .footer-asteandi .wadah3 .getinsosmed i {
+            font-size: 18px;
         }
     }
     @media (max-width: 350px) {
@@ -1445,60 +1202,11 @@
             visibility: hidden;
             opacity: 0;
         }
-        .content-asteandi .footer-asteandi .moto-asteandi .together-asteandi h2 {
-            font-size: 18px;
-        }
-        body {
-            
-            background: url(../img/1.jpg);
+        body { 
+            /* background: url(../img/1.jpg); */
         }
         .iso-marquee--long {
             font-size: 22vw;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .mail-asteandi {
-            height: 40px;
-            width: 150px;
-            display: flex;
-            font-size: 9px;
-            align-items: center;
-            justify-content: center;
-            border: solid 3px white;
-            background-color: #0a4a54;
-            border-radius: 10px;
-            color: white;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .phone-asteandi {
-            height: 40px;
-            width: 100px;
-            font-size: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: solid 3px white;
-            background-color: #0a4a54;
-            border-radius: 10px;
-            color: white;
-        }
-        .content-asteandi .footer-asteandi .buttoncontact-asteandi .buttonmail-asteandi .wa-asteandi {
-            height: 40px;
-            width: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: solid 3px white;
-            background-color: #0a4a54;
-            border-radius: 10px;
-            color: white;
-        }
-        .content-asteandi .footer-asteandi .buttonget-asteandi {
-            display: flex;
-            align-items: end;
-            justify-content: end;
-        }
-        .content-asteandi .footer-asteandi .buttonget-asteandi {
-            display: flex;
-            align-items: end;
-            justify-content: end;
         }
         .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout {
             height: 150px;
@@ -1513,11 +1221,6 @@
         }
         .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
             transform: translateY(400px);
-        }
-        .content-asteandi .footer-asteandi .buttonget-asteandi .buttonget {
-            height: 100px;
-            width: 100px;
-            font-size: 16px;
         }
         .header-asteandi .navbar-asteandi {
             visibility: hidden;
@@ -1548,12 +1251,37 @@
             justify-content: center;
             z-index: 992;
         }
-        .content-asteandi .footer-asteandi .medsos-asteandi i {
-            font-size: 22px;
+        .content-asteandi .footer-asteandi .wadah3 {
+            height: 15%;
+            display: flex;
+            flex-direction: column;
+            border-top: solid 1px #fff;
         }
-        .content-asteandi .footer-asteandi .medsos-asteandi h4 {
-            margin-right: 6px;
+        .content-asteandi .footer-asteandi .wadah3 .getincontact a {
+            font-weight: 300;
+            color: #fff;
+            width: 100px;
+        }
+        .content-asteandi .footer-asteandi .wadah3 .getinsosmed {
+            display: flex;
+            align-items: end;
+            justify-content: start;
+            gap: 5px;
+        }
+    }
+    @media (max-width: 315px) {
+        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
+            width: 10em;
+        }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .cart-asteandi {
+            width: 100px;
+        }
+        .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi i {
+            font-size: 24px;
+        }
+        .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi h1 {
             font-size: 10px;
         }
     }
+    
 /*MEDIA END*/
