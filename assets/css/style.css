@@ -23,9 +23,13 @@
         transition: background-color .7s ease-in-out;
     }
     body {
-        background-color: var(--third-color);
-        /* background: url(../img/background1.png); */
+        /* background-color: var(--third-color); */
+        background: url(../img/background1.png);
         overflow-x: hidden;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-attachment: fixed;
     }
     body::-webkit-scrollbar {
         display: none;
@@ -236,9 +240,9 @@
         width: 100vw;
         justify-content: center;
         display: flex;
-        position: absolute;
+        position: fixed;
         z-index: -2;
-        /* visibility: hidden; */
+        visibility: hidden;
     }
     .backgroundhome-asteandi img {
         height: 100vh;
@@ -1285,7 +1289,8 @@
     }
     @media (max-width: 315px) {
         .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
-            width: 10em;
+            width: 14em;
+            margin: 2em;
         }
         .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .cart-asteandi {
             width: 100px;
