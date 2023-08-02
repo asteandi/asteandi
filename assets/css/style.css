@@ -480,7 +480,7 @@
                 margin: 1em;
             }
             .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi:hover {
-                z-index: 20;
+                z-index: 1;
             }
             .gradientcard {
                 content: '';
