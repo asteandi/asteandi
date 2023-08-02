@@ -1093,6 +1093,9 @@
         .content-asteandi .content1-asteandi {
             box-shadow: none;
         }
+        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
+            margin-bottom: 3em;
+        }
         /* .content-asteandi .footer-asteandi .buttoncontact-asteandi {
             background-color: #2b8da3;
         } */
@@ -1290,7 +1293,6 @@
     @media (max-width: 315px) {
         .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
             width: 14em;
-            margin: 2em;
         }
         .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .cart-asteandi {
             width: 100px;
