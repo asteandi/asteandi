@@ -24,6 +24,7 @@
     }
     body {
         background-color: var(--third-color);
+        /* background: url(../img/background1.png); */
         overflow-x: hidden;
     }
     body::-webkit-scrollbar {
@@ -237,6 +238,7 @@
         display: flex;
         position: absolute;
         z-index: -2;
+        /* visibility: hidden; */
     }
     .backgroundhome-asteandi img {
         height: 100vh;
@@ -1179,6 +1181,12 @@
         .iso-marquee--long {
             font-size: 17vw;
         }
+        .content-asteandi .content1-asteandi {
+            padding: 100px 0 30px 0;
+        }
+        .content-asteandi .content1-asteandi .contentthemeasteandi {
+            min-height: 500px;
+        }
     }
     @media (max-width: 320px) {
         .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi i {
@@ -1199,8 +1207,8 @@
         .backgroundhome-asteandi img {
             /* position: fixed;
             overflow: hidden; */
-            visibility: hidden;
-            opacity: 0;
+            /* visibility: hidden;
+            opacity: 0; */
         }
         body { 
             /* background: url(../img/1.jpg); */
@@ -1268,6 +1276,12 @@
             justify-content: start;
             gap: 5px;
         }
+        .content-asteandi .content1-asteandi {
+            padding: 100px 0 0 0;
+        }
+        .content-asteandi .content1-asteandi .contentthemeasteandi {
+            min-height: 500px;
+        }
     }
     @media (max-width: 315px) {
         .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
@@ -1281,6 +1295,10 @@
         }
         .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi h1 {
             font-size: 10px;
+        }
+        .content-asteandi .footer-asteandi .iconprofile-asteandi img {
+            width: 150px;
+            /* background-color: #2b8da3; */
         }
     }
     
