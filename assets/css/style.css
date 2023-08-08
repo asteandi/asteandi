@@ -108,6 +108,35 @@
         background-color: var(--primary-color);
         color: #fff;
     }
+    .tooltiphover {
+        font-size: 14px;
+        position: absolute;
+        left: 135px;
+        background-color: #fff;
+        width: auto;
+        padding: 3.5px 10px;
+        border-radius: 7px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        /* visibility: hidden;*/
+        opacity: 0.5;
+        transition: 0.5s;
+    }
+    .header-asteandi .navbar-asteandi .logonavbar-asteandi:hover .tooltiphover {
+        transform: translateX(12px);
+        visibility: visible;
+        opacity: 1;
+    }
+    .tooltiphover::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: -8px;
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        z-index: -1;
+        transform: rotate(45deg) translateY(-60%);
+    }
     .navigation {
         position: fixed;
         top: 0;
@@ -277,43 +306,6 @@
         z-index: -4;
         /* background-color: #a4b2b7; */
     }
-    .iso-marquee {
-        font-size: 10vw;
-        width: 100vw;
-        overflow: hidden;
-        /* background-color:#222232; */
-    } 
-    .iso-marquee--long {
-        font-size: 6vw;
-    }
-    .iso-marquee-linkwrap a {
-        color: white;
-    }
-    .iso-marquee span {
-        display: inline-block;
-        white-space: nowrap;
-        font-family: var(--heading-font);
-        /* font-size: 5.5vw; */
-        width: var(--tw);
-        text-shadow: var(--tw) 0 currentColor, calc(var(--tw) * 2) 0 currentColor, calc(var(--tw) * 3) 0 currentColor, calc(var(--tw) * 4) 0 currentColor;
-        will-change: transform;
-        animation: iso-marquee var(--ad) linear infinite;
-        animation-play-state: play;
-    }
-    @keyframes iso-marquee {
-        0% { transform: translateX(0); }
-        100% { transform: translateX(-100%); } }
-    @media (prefers-reduced-motion: reduce) {
-        .iso-marquee span {
-            animation: none;
-            text-shadow: none;
-            width: auto;
-            display: block;
-            line-height: 1.5;
-            text-align: center;
-            white-space: normal;
-        }
-    }
     .content-asteandi .home-asteandi .descriptionbottom-asteandi {
         height: 40%;
         width: 100vw;
@@ -360,7 +352,9 @@
     .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi > .location2 {
         animation: spin 10s infinite linear reverse;
     }
-
+    .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi > .location3 {
+        animation: spin 15s infinite linear reverse;
+    }
     .content-asteandi .home-asteandi .descriptionbottom-asteandi .location-asteandi a {
         font-size: 14px;
         font-weight: 500;
@@ -390,262 +384,132 @@
     }
     /*HOME CONTENT END*/
     /*CONTENT UTAMA START*/
-        /*CONTENT 1 ABOUT START*/
+        /*CONTENT 2 WORK START*/
             .content-asteandi .content1-asteandi {
                 min-height: 100vh;
                 width: 100vw;
-                padding: 100px 0;
+                padding: 0;
                 box-shadow: 0 0 50px black;
                 background-color: white;
             }
-            .content-asteandi .content1-asteandi .about-asteandi {
-                text-align: justify;
-                padding: 0 200px;
-            }
-            .content-asteandi .content1-asteandi .about-asteandi span {
-                font-size: 38px;
-                font-weight: 600;
-            }
-            .content-asteandi .content1-asteandi .descriptionabout-asteandi {
-                display: flex;
-                /* border-bottom: solid 5px; */
-                padding: 0 200px 70px 200px;
-                /* background-color: #62b0bb; */
-            }
-            .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi {
-                display: flex;
-                justify-content: center;
-                margin-top: 50px;
-            }
-            .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout {
-                height: 200px;
-                width: 200px;
-                border-radius: 100%;
-                display: flex;
-                justify-content: center;
-                font-size: 20px;
-                font-weight: 800;
-                align-items: center;
-                /* background-color: var(--primary-color); */
-                background: linear-gradient(90deg, #09353b 0%, #0a4a54 100%);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.716);
-                cursor: pointer;
-                transform-style: preserve-3d;
-                transform: perspective(1000px);
-            }
-            .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout a {
-                color: white;
-                transform: translateZ(60px);
-                text-shadow: 0 5px 20px black;
-            }
-            .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi:hover {
-                filter: grayscale(100%);
-            }
-            .content-asteandi .content1-asteandi .descriptionabout-asteandi .description-asteandi {
-                text-align: justify;
-                padding: 50px 0 0 0;
-            }
-            .content-asteandi .content1-asteandi .descriptionabout-asteandi .description-asteandi p {
-                font-size: 22px;
-            }
-        /*CONTENT 1 ABOUT END*/
-        /*CONTENT 2 WORK START*/
             .content-asteandi .content1-asteandi .contentutama-asteandi {
-                min-height: 1250px;
-                padding: 30px 0;
+                min-height: 100vh;
                 /* background-color: #62b0bb; */
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                flex-wrap: wrap;
-                padding: 1em;
-                max-width: 1100px;
-                margin: 0 auto;
-                min-height: 100vh;
-                gap: 30px;
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi * {
+            .grid-container {
+                margin: 0;
+                padding: 0;
                 box-sizing: border-box;
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
-                width: 17em;
-                background-color: #fff;
+            .grid-wrapper {
+                padding: 30px;
+            }
+            .grid-wrapper .grid-img {
+                max-width: 100%;
+                height: auto;
+                vertical-align: middle;
+                display: inline-block;
+            }
+            .grid-wrapper > div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .grid-wrapper > div > .grid-img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
                 border-radius: 10px;
-                box-shadow: rgba(100, 100, 111, 0.618) 0px 7px 20px 0px;
-                position: relative;
+            }
+            .grid-wrapper {
+                display: grid;
+                grid-gap: 10px;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                grid-auto-rows: 200px;
+                grid-auto-flow: dense;
+            }
+            .grid-wrapper .wide {
+                grid-column: span 2;
+            }
+            .grid-wrapper .tall {
+                grid-row: span 2;
+            }
+            .grid-wrapper .big {
+                grid-column: span 2;
+                grid-row: span 2;
+            }
+            .grid-wrapper .grid-card {
+                cursor: pointer;
                 transform-style: preserve-3d;
                 transform: perspective(1000px);
-                margin: 1em;
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi:hover {
-                z-index: 1;
+            .grid-wrapper .grid-card:hover {
+                box-shadow: rgba(100, 100, 111, 0.618) 0px 7px 20px 0px;
+                border-radius: 10px;
             }
-            .gradientcard {
-                content: '';
-                position: absolute;
-                width: 320px;
-                height: 500px;
-                background: linear-gradient(0, #ffffff 0%, #ffffff40 100%);
-                bottom: -35px;
-                right: -23px;
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi img {
-                height: 8em;
-                width: 8em;
-                font-weight: 800;
+            .grid-card .workbutton {
+                transform-style: preserve-3d;
+                transform: perspective(1000px);
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                position: absolute;
-                top: 7em;
-                right: 0;
-                justify-content: center;
-                /* border-radius: 100%; */
-                /* box-shadow: rgba(100, 100, 111, 0.442) 0px 7px 29px 0px; */
-                /* background: linear-gradient(90deg, #48c5d8 0%, #0a4a54 100%); */
-                transform: translateZ(70px);
-                filter : drop-shadow(0px 10px 25px rgba(0, 0, 0, 0.5));
-                /* text-shadow: rgba(100, 100, 111, 0.442) 0px 7px 29px 0px; */
+                background-color: var(--primary-color);
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi span {
-                color: white;
-                transform: translateZ(80px);
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner-asteandi {
-                height: 15em;
-                background: var(--primary-color);
-                padding: 2em;
-                border-radius: 10px 10px 50% 0;
-                transform: translateZ(30px);
-                box-shadow: rgba(100, 100, 111, 0.442) 0px 7px 29px 0px;
-                transition: 0.5s;
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner-asteandi h2 {
+            .grid-card .workbutton .workwork {
                 color: #fff;
-                /* margin: 0 0 0 0.8em; */
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi:hover .banner-asteandi {
-                filter: brightness(50%);
+                font-size: 28px;
+                font-weight: 800;
                 transition: 0.5s;
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi:hover .gradientcard {
-                visibility: hidden;
+            .grid-card .workbutton:hover .workwork {
+                transform: translateZ(70px);
+                transition: 0.5s;
+                text-shadow: 0 10px 15px #000000a7;
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner1 {
-                background: url(../img/img6.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-attachment: fixed;
+            .grid-wrapper .aboutback {
+                /* background-color: var(--secondary-color); */
+                border-radius: 10px;
+                padding: 30px;
+                cursor: auto;
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner2 {
-                background: url(../img/img7.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-attachment: fixed;
+            .grid-card .spanabout {
+                font-size: 22px;
+                font-weight: 800;
+                /* text-align: justify; */
+                /* color: #fff; */
+                transition: 0.5s;
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner3 {
-                background: url(../img/img8.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-attachment: fixed;
+            .aboutback:hover .spanabout {
+                transform: translateZ(70px);
+                transition: 0.5s;
+                /* text-shadow: 0 10px 15px #000000a7; */
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner4 {
-                background: url(../img/img9.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-attachment: fixed;
+            .grid-wrapper .descriptback {
+                padding: 30px;
+                border-radius: 10px;
+                /* background-color: var(--secondary-color); */
+                cursor: auto;
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner5 {
-                background: url(../img/img10.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-attachment: fixed;
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .banner6 {
-                background: url(../img/img11.jpg);
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center;
-                background-attachment: fixed;
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi {
-                padding: 2em;
-                transform-style: preserve-3d;
-                transform: perspective(1000px);
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .details-asteandi {
-                transform: translateZ(30px);
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .details-asteandi small {
-                display: block;
-                font-size: 0.8em;
+            .grid-wrapper .descriptback p {
+                font-weight: 400;
+                font-size: 16px;
                 text-align: justify;
             }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .cart-asteandi {
-                /* background: var(--primary-color); */
-                background: linear-gradient(90deg, #09353b 0%, #0a4a54 100%);
-                padding: 1em 1.1em;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 200px;
-                border-radius: 2em;
-                color: #fff;
-                border: none;
-                margin: 0 auto;
-                font-weight: 700;
-                box-shadow: rgba(89, 89, 96, 0.879) 0px 7px 29px 0px;
-                cursor: pointer;
-                margin-top: 30px;
+            .grid-wrapper .descriptback:hover .pdescript {
+                transform: translateZ(70px);
+                transition: 0.5s;
+                text-shadow: 0 10px 15px #000000a7;
             }
-            .pop {
-                transform: translateY(-20%) translateZ(40px);
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
-                display: flex;
-                position: absolute;
-                padding: 0 200px;
-                transform: translateY(130px);
-                z-index: 1;
-                /* background-color: aqua; */
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork {
-                height: 200px;
-                width: 200px;
-                border-radius: 100%;
-                display: flex;
-                justify-content: center;
-                font-size: 20px;
-                font-weight: 800;
-                align-items: center;
-                /* background-color: var(--primary-color); */
-                background: linear-gradient(90deg, #09353b 0%, #0a4a54 100%);
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.716);
-                cursor: pointer;
-                transform-style: preserve-3d;
-                transform: perspective(1000px);
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi:hover {
-                filter: grayscale(100%);
-            }
-            .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork a {
-                color: white;
-                transform: translateZ(60px);
-                text-shadow: 0 5px 20px black;
-            }
+
         /*CONTENT 2 WORK END*/
         /*CONTENT 3 MY THEME START*/
             .content-asteandi .content1-asteandi .contentthemeasteandi {
                 min-height: 100vh;
                 width: 100vw;
-                padding: 0 200px 30px 200px;
+                padding: 0 30px 100px 30px;
                 /* background-color: #62b0bb; */
             }
             .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi {
@@ -785,7 +649,7 @@
                 /* width: 100vw; */
                 height: 15%;
                 display: flex;
-                border-top: solid 1px #fff;
+                /* border-top: solid 1px #fff; */
                 /* background-color:cadetblue; */
             }
             .content-asteandi .footer-asteandi .wadah3 .getincontact {
@@ -820,35 +684,6 @@
     /*CONTENT UTAMA END*/
 /*CONTENT END*/
 /*TOOLTIP HOVER START*/
-    .tooltiphover {
-        font-size: 14px;
-        position: absolute;
-        left: 135px;
-        background-color: #fff;
-        width: auto;
-        padding: 3.5px 10px;
-        border-radius: 7px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        /* visibility: hidden;*/
-        opacity: 0.5;
-        transition: 0.5s;
-    }
-    .header-asteandi .navbar-asteandi .logonavbar-asteandi:hover .tooltiphover {
-        transform: translateX(12px);
-        visibility: visible;
-        opacity: 1;
-    }
-    .tooltiphover::before {
-        content: '';
-        position: absolute;
-        top: 50%;
-        left: -8px;
-        width: 12px;
-        height: 12px;
-        background-color: #fff;
-        z-index: -1;
-        transform: rotate(45deg) translateY(-60%);
-    }
     .tooltiphovermenu {
         font-size: 14px;
         font-weight: 600;
@@ -967,46 +802,12 @@
 /*TOOLTIP HOVER END*/
 
 /*MEDIA START*/
-    @media (max-width: 1000px) {
-        .content-asteandi .content1-asteandi .about-asteandi {
-            padding: 0 100px;
-        }
-        .content-asteandi .content1-asteandi .descriptionabout-asteandi {
-            display: flex;
-            /* border-bottom: solid 5px; */
-            padding: 0 100px 70px 100px;
-            /* background-color: #62b0bb; */
-        }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi {
-            padding: 0;
-            gap: 0;
-        }
-        .gradientcard {
-            visibility: hidden;
-            opacity: 0;
-        }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
-            padding: 0 30px;
-            transform: translateY(200px);
-            /* background-color: aqua; */
-        }
-        .content-asteandi .content1-asteandi .contentthemeasteandi {
-            padding: 0 100px 30px 100px;
-        }
+    /* @media (max-width: 1000px) {
+        
     }
     @media (max-width: 900px) {
-        .iso-marquee--long {
-            font-size: 7.5vw;
-        }
-        .content-asteandi .content1-asteandi .contentutama-asteandi {
-            min-height: 1750px;
-        }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
-            padding: 0 30px;
-            transform: translateY(250px);
-            /* background-color: aqua; */
-        }
-    }
+        
+    } */
     @media (max-width: 768px) {
         .navigation .navArea {
             position: absolute;
@@ -1052,74 +853,36 @@
             background-color: #62b0bb;
             opacity: 0.7;
         }
+        /* .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi a {
+            font-size: 48px;
+        } */
+    }
+    /* @media (max-width: 664px) {
+        
+    } */
+    @media (max-width: 600px) {
         .content-asteandi .content1-asteandi .contentthemeasteandi {
-            padding: 0 30px 30px 30px;
+            padding-bottom: 80px;
         }
         .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi a {
             font-size: 48px;
         }
     }
-    @media (max-width: 664px) {
-        .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi {
-            z-index: -1;
-        }
-        .iso-marquee--long {
-            font-size: 9vw;
-        }
-        .content-asteandi .home-asteandi .homenamemiddle-asteandi .iso-marquee-linkwrap {
-            z-index: -2;
-        }
-        .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi {
-            z-index: -2;
-        }
-        .content-asteandi .content1-asteandi .about-asteandi {
-            text-align: justify;
-            padding: 0 30px;
-        }
-        .content-asteandi .content1-asteandi .about-asteandi span {
-            font-size: 24px;
-        }
-        .content-asteandi .content1-asteandi .descriptionabout-asteandi {
-            padding: 0 30px 50px 30px;
-        }
-        .content-asteandi .content1-asteandi .descriptionabout-asteandi .description-asteandi {
-            padding: 30px 0 0 0;
-        }
-        .content-asteandi .content1-asteandi .descriptionabout-asteandi .description-asteandi p {
-            font-size: 16px;
-        }
-    }
-    @media (max-width: 600px) {
-        .content-asteandi .content1-asteandi {
-            box-shadow: none;
-        }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
-            margin-bottom: 3em;
-        }
-        /* .content-asteandi .footer-asteandi .buttoncontact-asteandi {
-            background-color: #2b8da3;
-        } */
-        .iso-marquee--long {
-            font-size: 12vw;
-        }
-    }
     @media (max-width: 480px) {
-        .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout {
-            height: 150px;
-            width: 150px;
-            font-size: 20px;
-            font-weight: 800;
+        .tooltiphover {
+            opacity: 0;
         }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork {
-            height: 150px;
-            width: 150px;
-            font-size: 20px;
+        .content-asteandi .home-asteandi .descriptionbottom-asteandi .location-asteandi a {
+            font-size: 10px;
         }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
-            transform: translateY(320px);
+        .content-asteandi .home-asteandi .descriptionbottom-asteandi .location-asteandi i {
+            font-size: 26px;
         }
-        .iso-marquee--long {
-            font-size: 15.5vw;
+        .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi i {
+            font-size: 32px;
+        }
+        .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi h1 {
+            font-size: 12px;
         }
         .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi img {
             width: 120px;
@@ -1127,8 +890,24 @@
         .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi .location2 {
             width: 120px;
         }
+        .grid-wrapper {
+            padding: 30px 10px 0 10px;
+        }
+        .grid-card .workbutton .workwork {
+            font-size: 16px;
+            text-align: center;
+        }
+        .grid-card .spanabout {
+            font-size: 18px;
+        }
+        .content-asteandi .content1-asteandi .contentthemeasteandi {
+            padding: 10px 10px 80px 10px;
+        }
+        .grid-wrapper .descriptback p {
+            font-size: 12px;
+        }
         .content-asteandi .footer-asteandi .iconprofile-asteandi img {
-            width: 200px;
+            width: 250px;
         }
         .content-asteandi .footer-asteandi .wadah2 h4 {
             font-size: 10px;
@@ -1139,6 +918,20 @@
         }
         .content-asteandi .footer-asteandi .wadah3 .getinsosmed i {
             font-size: 18px;
+        }
+        .content-asteandi .footer-asteandi .wadah2 {
+            height: 10%;
+        }
+        .content-asteandi .footer-asteandi .wadah3 {
+            height: 35%;
+            display: flex;
+            /* border-top: solid 1px #fff; */
+            /* background-color:cadetblue; */
+        }
+    }
+    @media (max-width: 375px) {
+        .grid-card .workbutton {
+            padding: 10px;
         }
     }
     @media (max-width: 350px) {
@@ -1178,72 +971,43 @@
         .content-asteandi .home-asteandi .homenamemiddle-asteandi .jobimg-asteandi .location2 {
             width: 100px;
         }
-        .content-asteandi .content1-asteandi .descriptionabout-asteandi {
-            display: block;
+
+        .content-asteandi .footer-asteandi .iconprofile-asteandi img {
+            width: 200px;
         }
-        .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi {
-            display: flex;
-            justify-content: start;
-        }
-        .iso-marquee--long {
-            font-size: 17vw;
-        }
-        .content-asteandi .content1-asteandi {
-            padding: 100px 0 30px 0;
+    }
+    @media (max-width: 340px) {
+        .grid-wrapper {
+            grid-gap: 5px;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
         }
         .content-asteandi .content1-asteandi .contentthemeasteandi {
-            min-height: 500px;
+            padding-bottom: 50px;
+        }
+        .grid-card .workbutton .workwork {
+            font-size: 14px;
+            text-align: center;
+        }
+        .grid-card .spanabout {
+            font-size: 14px;
+        }
+        .grid-wrapper .descriptback p {
+            font-size: 11px;
         }
     }
     @media (max-width: 320px) {
+        .tooltiphover {
+            opacity: 0;
+        }
         .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi i {
             font-size: 30px;
         }
         .content-asteandi .home-asteandi .descriptionbottom-asteandi .jobdesk-asteandi h1 {
             font-size: 12px;
         }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
-            width: 14em;
-        }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi .workcontent-asteandi .cart-asteandi {
-            width: 100px;
-        }
         .content-asteandi .content1-asteandi .contentthemeasteandi .themeasteandi a {
             font-size: 30px;
         }
-        .backgroundhome-asteandi img {
-            /* position: fixed;
-            overflow: hidden; */
-            /* visibility: hidden;
-            opacity: 0; */
-        }
-        body { 
-            /* background: url(../img/1.jpg); */
-        }
-        .iso-marquee--long {
-            font-size: 22vw;
-        }
-        .content-asteandi .content1-asteandi .descriptionabout-asteandi .buttonabout-asteandi .buttonabout {
-            height: 150px;
-            width: 150px;
-            font-size: 20px;
-            font-weight: 800;
-        }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi .buttonwork {
-            height: 100px;
-            width: 100px;
-            font-size: 16px;
-        }
-        .content-asteandi .content1-asteandi .contentutama-asteandi .buttonwork-asteandi {
-            transform: translateY(400px);
-        }
-        .header-asteandi .navbar-asteandi {
-            visibility: hidden;
-        }
-        /* .content-asteandi .footer-asteandi .iconprofile-asteandi img {
-            width: 100px;
-            left: 30px;
-        } */
         .navigation .navArea ul li a {
             font-size: 1em;
         }
@@ -1283,14 +1047,30 @@
             justify-content: start;
             gap: 5px;
         }
-        .content-asteandi .content1-asteandi {
-            padding: 100px 0 0 0;
-        }
         .content-asteandi .content1-asteandi .contentthemeasteandi {
             min-height: 500px;
         }
+        .content-asteandi .footer-asteandi .iconprofile-asteandi img {
+            width: 200px;
+        }
+        .content-asteandi .footer-asteandi .wadah3 {
+            height: 35%;
+            display: flex;
+            justify-content: end;
+            /* border-top: solid 1px #fff; */
+            /* background-color:cadetblue; */
+        }
+        .content-asteandi .footer-asteandi .wadah3 .getincontact {
+            width: 50%;
+            height: 180%;
+            display: flex;
+            flex-direction: column;
+        }
     }
     @media (max-width: 315px) {
+        .grid-wrapper {
+            grid-gap: 10px;
+        }
         .content-asteandi .content1-asteandi .contentutama-asteandi .cardwork-asteandi .card-asteandi {
             width: 14em;
         }
@@ -1307,6 +1087,7 @@
             width: 150px;
             /* background-color: #2b8da3; */
         }
+    
     }
     
 /*MEDIA END*/
