@@ -472,6 +472,10 @@
         width: 160px;
         height: 160px;
     }
+    .used .itembox {
+        width: 160px;
+        height: 250px;
+    }
 }
 
 @media screen and (max-width: 379px) {
