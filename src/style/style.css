@@ -21,8 +21,8 @@
     position: fixed;
     top: 20px;
     right: 20px;
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     background: var(--button-color);
     display: flex;
     justify-content: space-between;
@@ -31,6 +31,7 @@
     overflow: hidden;
     border-radius: 5px;
     z-index: 20;
+    border: 1px solid var(--icon-color);
 }
 
 .navigation.active {
@@ -230,6 +231,7 @@
     padding-top: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    width: 100%;
 }
 
 .section1 ul li {
