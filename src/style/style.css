@@ -264,6 +264,36 @@
     padding-bottom: 40px;
 }
 
+.mywork {
+    display: flex;
+    justify-content: left;
+    align-items: left;
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+
+.mywork details {
+    cursor: pointer;
+}
+
+.details2 {
+    padding-left: 19px;
+}
+
+.details2 a {
+    padding-left: 18px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+.details2 details {
+    padding-left: 19px;
+}
+
 .product .itembox {
     position: relative;
     width: 200px;
